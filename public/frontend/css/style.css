@@ -207,7 +207,7 @@ a {
 .site-navbar-top {
   display: none;
   font-size: 0.8rem;
-  background: #5a9635; }
+  background: black; }
   .site-navbar-top a {
     color: #fff; }
   .site-navbar-top .text-with-icon {
@@ -220,7 +220,7 @@ a {
   margin-bottom: 0px;
   width: 100%;
   border-bottom: none;
-  background: #fff !important; }
+  background: #fff; }
   .site-navbar .site-logo {
     font-weight: 200; }
     .site-navbar .site-logo a {

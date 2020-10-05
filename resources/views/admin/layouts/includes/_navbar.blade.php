@@ -16,10 +16,10 @@
 
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle active" data-toggle="dropdown"><img src="" class="img-circle"> <span>{{auth()->user()->name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+          <a href="#" class="dropdown-toggle active" data-toggle="dropdown"><img src="{{$user->tim->getAvatar()}}" class="img-circle"> <span>{{auth()->user()->name}}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
           <ul class="dropdown-menu">
-            <li><a href=""><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-            <li><a href=""><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+            <li><a href="{{route('profile')}}"><i class="lnr lnr-user"></i> <span>Profile</span></a></li>
+            <li><a href="{{route('logout')}}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
           </ul>
         </li>
 

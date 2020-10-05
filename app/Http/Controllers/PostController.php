@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use Str;
+use App\Kategori;
 use App\Post;
+use App\Banner;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -13,13 +15,15 @@ class PostController extends Controller
   }
 
   public function createPost(){
-    return view('admin.posts.createPost');
+    $kategoris = Kategori::all();
+    return view('admin.posts.createPost',compact(['kategoris']));
   }
 
   public function storePost(Request $request){
     $request->validate([
       'judul' => 'required',
       'gambar' =>'file|image|mimes:png,jpg,jpeg,gif|max:10000',
+      'kategori_id'=>'required',
       'konten' => 'required',
     ]);
 
@@ -34,6 +38,7 @@ class PostController extends Controller
         'slug' => Str::slug($request->judul),
         'user_id' => auth()->user()->id,
         'konten' => $request->konten,
+        'kategori_id'=>$request->kategori_id,
         'gambar' => $nama_gambar_post,
         'link' => $request->link
       ]);
@@ -45,11 +50,87 @@ class PostController extends Controller
         'slug' => Str::slug($request->judul),
         'user_id' => auth()->user()->id,
         'konten' => $request->konten,
+        'kategori_id'=>$request->kategori_id,
         'link' => $request->link,
       ]);
     }
 
 
     return redirect()->route('getPosts')->with('success','Berhasil membuat berita baru');
+  }
+
+  public function editPost($id)
+  {
+    $post = Post::find($id);
+    $kategoris = Kategori::all();
+    //dd($post->kategori);
+    return view('admin.posts.editPost',compact(['post','kategoris']));
+  }
+
+  public function updatePost(Request $request)
+  {
+    $post_lama = Post::find($request->id);
+    $request->validate([
+      'gambar' => 'file|image|mimes:png,jpg,jpeg,gif|max:10000',
+      'judul' => 'required',
+      'konten' => 'required',
+      'kategori_id' => 'required'
+    ]);
+
+    if ($request->hasFile('gambar')) {
+        $gambar = $request->file('gambar');
+        $nama_gambar = time()."_".$gambar->getClientOriginalName();
+        $tujuan_upload = 'posts';
+        $gambar->move($tujuan_upload,$nama_gambar);
+
+
+        $post_lama->update([
+          'judul' => $request->judul,
+          'slug' => Str::slug($request->judul),
+          'konten' => $request->konten,
+          'gambar' => $nama_gambar,
+          'kategori_id' => $request->kategori_id,
+          'link' => $request->link,
+        ]);
+      }else {
+        // $link_lama = $request->link;
+        // if ($link_lama != null) {
+        //   //$request->link->replace('width="560"','width="100%"');
+        //   $link_lama = Str::of('width="560"')->replace('560', '100%');
+        // }
+        // dd($link_lama);
+        // //dd($request->link);
+        $post_lama->update([
+          'judul' => $request->judul,
+          'slug' => Str::slug($request->judul),
+          'konten' => $request->konten,
+          'kategori_id' => $request->kategori_id,
+          'link' => $request->link,
+        ]);
+      }
+      return redirect()->back()->with('success','Berhasil Mengupdate berita');
+  }
+  //USER---------------------------
+
+  public function showPostUser($slug){
+    $banners = Banner::all();
+    $kategoris = Kategori::all();
+    $post = Post::where('slug',$slug)->first();
+    return view('guest.posts.singlepost',compact(['post','banners','kategoris']));
+  }
+
+  public function getPostsUser()
+  {
+    $kategoris = Kategori::all();
+    $posts = Post::orderBy('created_at','desc')->paginate(6);
+    return view('guest.posts.berita',compact(['posts','kategoris']));
+  }
+
+  public function getPostsKategori($kategori)
+  {
+    $kategoris = Kategori::all();
+    $ktg = Kategori::where('nama_kategori',$kategori)->first();
+    $posts = Post::where('kategori_id',$ktg->id)->orderBy('created_at','desc')->paginate(6);
+    return view('guest.posts.postPerKategori',compact(['posts','kategoris','ktg']));
   }
 }

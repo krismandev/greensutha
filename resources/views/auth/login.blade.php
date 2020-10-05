@@ -64,8 +64,8 @@
 					<div class="right">
 						<div class="overlay"></div>
 						<div class="content text">
-							<h1 class="heading">Cendekia Langit</h1>
-							<p>Dashboard</p>
+							<h1 class="heading">Green SUTHA</h1>
+							<p>UIN Sulthan Thaha Saifuddin Jambi</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>

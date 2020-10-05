@@ -54,6 +54,19 @@
     </div>
 		<div class="row" style="margin-top:10px;">
       <div class="col-lg-2">
+        Kategori
+      </div>
+      <div class="col-lg-10">
+				<select class="form-control" name="kategori_id">
+					<option value="" selected>Pilih kategori</option>
+					@foreach($kategoris as $kategori)
+					<option value="{{$kategori->id}}">{{$kategori->nama_kategori}}</option>
+					@endforeach
+				</select>
+      </div>
+    </div>
+		<div class="row" style="margin-top:10px;">
+      <div class="col-lg-2">
         Link Video <br>
 				<small>*kosongkan jika tidak ingin diisi</small>
       </div>

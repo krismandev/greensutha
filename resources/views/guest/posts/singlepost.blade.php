@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{$post->judul}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('frontend/fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/jquery.fancybox.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('frontend/fonts/flaticon/font/flaticon.css')}}">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="{{asset('frontend/css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <style>
+    @font-face {
+      font-family: aclonica;
+      src: url(frontend/fonts/Aclonica.ttf);
+      }
+      .site-logo{
+        font-family: aclonica;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap">
+
+
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+
+
+    <style>
+
+      @font-face {
+      font-family: aclonica;
+      src: url(frontend/fonts/Aclonica.ttf);
+      }
+      .site-logo{
+        font-family: aclonica;
+      }
+    </style>
+
+    <div class="site-navbar-wrap js-site-navbar" style="background-color: #71bc42;">
+      <div class="container">
+        <div class="site-navbar" style="background-color: #71bc42;">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h2 class="mb-0 site-logo"><a href="{{route('home')}}" class="font-weight-bold">GreenSUTHA</a></h2>
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class=""><a href="{{route('home')}}">Beranda</a></li>
+                    <li class="has-children">
+                      <a href="#">Tentang</a>
+                      <ul class="dropdown arrow-top">
+                        <li><a href="{{route('getSelayangPandangUser')}}">Selayang Pandang</a></li>
+                        <li><a href="{{route('getTimUser')}}">Tim GreenSutha</a></li>
+                        <li><a href="{{route('getMitraUser')}}">Kerja sama</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Green Sutha</a>
+                      <ul class="dropdown arrow-top">
+                        <li><a href="{{route('getPenataanUser')}}">Penataan & Infrastruktur</a></li>
+                        <li><a href="{{route('getEnergiUser')}}">Energi & Perubahan Iklim</a></li>
+                        <li><a href="{{route('getLimbahUser')}}">Limbah</a></li>
+                        <li><a href="{{route('getAirUser')}}">Air</a></li>
+                        <li><a href="{{route('getTransportasiUser')}}">Transportasi</a></li>
+                        <li><a href="{{route('getPendidikanUser')}}">Pendidikan & Penelitian</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Event</a>
+                      <ul class="dropdown arrow-top">
+                        <li><a href="{{route('getEventUser')}}">GreenSutha Award</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="{{route('getPostsUser')}}">Berita</a>
+                      <ul class="dropdown arrow-top">
+                        @foreach($kategoris as $kategori)
+                        <li><a href="{{route('getPostsKategori',$kategori->nama_kategori)}}">{{$kategori->nama_kategori}}</a></li>
+                        @endforeach
+                      </ul>
+                    </li>
+                    <li class="has-children">
+                      <a href="#">Gallery</a>
+                      <ul class="dropdown arrow-top">
+                        <li><a href="{{route('getFotoUser')}}">Foto</a></li>
+                        <li><a href="{{route('getPosterUser')}}">Poster</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="{{route('kontakUser')}}">Kontak</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="slant-1"></div>
+
+
+
+    <div class="site-section first-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 blog-content">
+            <h2 class="lead">{{$post->judul}}</h2>
+            <p><img src="{{url('posts/'.$post->gambar)}}" alt="Image" class="img-fluid"></p>
+
+            <p>{!!$post->konten!!}</p>
+            <div class="pt-5">
+              <p>Kategori:  <a href="{{route('getPostsKategori',$post->kategori->nama_kategori)}}">{{$post->kategori->nama_kategori}}</a></p>
+            </div>
+
+
+          </div>
+          <div class="col-md-4 sidebar">
+            <div class="sidebar-box">
+              <div class="categories">
+                <h3 class="text-uppercase">Kategori</h3>
+                @foreach($kategoris as $kategori)
+                <li><a href="{{route('getPostsKategori',$kategori->nama_kategori)}}">{{$kategori->nama_kategori}} <span>({{$kategori->sum_post()}})</span></a></li>
+                @endforeach
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer bg-dark">
+      <div class="container">
+
+
+        <div class="row">
+
+          <div class="col-md-5 mb-4 mb-md-0 ml-auto">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Menu Cepat</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Green Sutha</a></li>
+                    <li><a href="#">Event</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6">
+
+                  <ul class="list-unstyled">
+                    <li><a href="#">Berita</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Kontak</a></li>
+                  </ul>
+              </div>
+            </div>
+
+            <div class="row mb-5">
+              <div class="col-md-12">
+              <h3 class="footer-heading mb-4 text-white">Stay up to date</h3>
+              <form action="#" class="d-flex footer-subscribe">
+                <input type="text" class="form-control rounded-0" placeholder="Enter your email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+              </form>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-2">
+
+            <div class="row">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+              <div class="col-md-12">
+                <p>
+                  <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+                  <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
+
+                </p>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+
+
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{{asset('frontend/js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{asset('frontend/js/jquery-migrate-3.0.1.min.js')}}"></script>
+  <script src="{{asset('frontend/js/jquery-ui.js')}}"></script>
+  <script src="{{asset('frontend/js/popper.min.js')}}"></script>
+  <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('frontend/js/jquery.stellar.min.js')}}"></script>
+  <script src="{{asset('frontend/js/jquery.fancybox.min.js')}}"></script>
+
+  <script src="{{asset('frontend/js/jquery.waypoints.min.js')}}"></script>
+  <script src="{{asset('frontend/js/jquery.animateNumber.min.js')}}"></script>
+  <script src="{{asset('frontend/js/aos.js')}}"></script>
+
+  <script src="{{asset('frontend/js/main.js')}}"></script>
+
+
+  </body>
+</html>
