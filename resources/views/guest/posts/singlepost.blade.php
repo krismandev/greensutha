@@ -148,6 +148,11 @@
             <div class="pt-5">
               <p>Kategori:  <a href="{{route('getPostsKategori',$post->kategori->nama_kategori)}}">{{$post->kategori->nama_kategori}}</a></p>
             </div>
+            @if($post->link != null)
+            <div class="container">
+              <iframe src="{{$post->link}}" width="100%" height="100%"></iframe>
+            </div>
+            @endif
 
 
           </div>

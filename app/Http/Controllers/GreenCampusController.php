@@ -45,7 +45,7 @@ class GreenCampusController extends Controller
       $link_awal = $request->link;
       $sebelum = 'watch?v=';
       $sesudah = ['embed/'];
-      $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
+      $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal); 
 
     }
 

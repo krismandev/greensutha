@@ -24,21 +24,21 @@
 
           <div class="row form-group">
             <div class="col-md-12 mb-3 mb-md-0">
-              <label class="font-weight-bold" for="phone">Phone</label>
+              <label class="font-weight-bold" for="phone">Hp</label>
               <input type="text" id="phone" class="form-control" placeholder="Masukkan no. Telepon/Hp..." name="hp">
             </div>
           </div>
 
           <div class="row form-group">
             <div class="col-md-12">
-              <label class="font-weight-bold" for="message">Message</label>
-              <textarea name="pesan" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
+              <label class="font-weight-bold" for="message">Pesan</label>
+              <textarea name="pesan" id="message" cols="30" rows="5" class="form-control" placeholder="Tulis pesanmu"></textarea>
             </div>
           </div>
 
           <div class="row form-group">
             <div class="col-md-12">
-              <input type="submit" value="Send Message" class="btn btn-primary text-white px-4 py-2">
+              <input type="submit" value="Kirim" class="btn btn-primary text-white px-4 py-2">
             </div>
           </div>
 
@@ -65,16 +65,7 @@
     </div>
   </div>
 </div>
-@if(session('success'))
-<script>
-  $(document).ready(function() {
-    swal({
-    title: "OK",
-    text: "Berhasil mengirim pesan",
-    icon: "success",
-    });
 
-});
-</script>
-@endif
+
+
 @stop

@@ -31,8 +31,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $fotos = Foto::all();
-      $posters = Poster::all();
+      $fotos = Foto::orderBy('created_at','desc')->paginate(8);
+      $posters = Poster::orderBy('created_at','desc')->paginate(8);
       $selayang_pandang = SelayangPandang::first();
       $banners = Banner::all();
       $events = Event::all();

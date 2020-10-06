@@ -26,6 +26,15 @@ class PostController extends Controller
       'kategori_id'=>'required',
       'konten' => 'required',
     ]);
+    if ($request->link != null) {
+      $link_awal = $request->link;
+      $sebelum = 'watch?v=';
+      $sesudah = ['embed/'];
+      $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
+    }else {
+      $link_youtube = null;
+    }
+
 
     if ($request->hasFile('gambar')) {
       $gambar_post = $request->file('gambar');
@@ -40,7 +49,7 @@ class PostController extends Controller
         'konten' => $request->konten,
         'kategori_id'=>$request->kategori_id,
         'gambar' => $nama_gambar_post,
-        'link' => $request->link
+        'link' => $link_youtube
       ]);
 
     }else {
@@ -51,7 +60,7 @@ class PostController extends Controller
         'user_id' => auth()->user()->id,
         'konten' => $request->konten,
         'kategori_id'=>$request->kategori_id,
-        'link' => $request->link,
+        'link' => $link_youtube,
       ]);
     }
 

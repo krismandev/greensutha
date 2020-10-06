@@ -68,7 +68,7 @@
                     <li><a href="{{route('getPosterUser')}}">Poster</a></li>
                   </ul>
                 </li>
-                <li><a href="{{route('kontakUser')}}">Kontak</a></li>
+                <li class="" ><a href="{{route('kontakUser')}}">Kontak</a></li>
               </ul>
             </div>
           </nav>
