@@ -7,7 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('frontend/fonts/icomoon/style.css')}}">
-
+    <link rel="icon" href="{{asset('frontend/images/logo-uin.jpg')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/jquery-ui.css')}}">

@@ -12,9 +12,9 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
       $data = [
-        'name'=> 'Krisman Pratama Simanjuntak',
-        'email' => 'krismanpratama@gmail.com',
-        'password' => bcrypt('zzzzzzzz'),
+        'name'=> "Admin",
+        'email' => 'greensutha@uinjambi.ac.id',
+        'password' => bcrypt('ADMINGREENSUTHA2020'),
         'role' => 'superadmin'
       ];
 

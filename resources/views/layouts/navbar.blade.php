@@ -1,9 +1,9 @@
 <style>
+@font-face {
+font-family: aclonica;
+src: url('frontend/fonts/Aclonica.ttf');
+}
 
-  @font-face {
-  font-family: aclonica;
-  src: {{url(frontend/fonts/Aclonica.ttf);}}
-  }
   .site-logo{
     font-family: aclonica;
   }

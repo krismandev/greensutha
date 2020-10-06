@@ -1,4 +1,9 @@
 /* Base */
+@font-face {
+font-family: aclonica;
+src: url(frontend/fonts/Aclonica.ttf);
+}
+
 body {
   line-height: 1.7;
   color: rgba(0, 0, 0, 0.5);
@@ -10,6 +15,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat; }
+
+
+
 
 ::-moz-selection {
   background: #000;
