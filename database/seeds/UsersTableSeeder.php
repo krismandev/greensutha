@@ -1,5 +1,5 @@
 <?php
-
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
         'role' => 'superadmin'
       ];
 
-      DB::table('users')->insert($data);
+      //DB::table('users')->insert($data);
+      User::create($data);
     }
 }
