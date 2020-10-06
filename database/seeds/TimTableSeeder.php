@@ -13,8 +13,8 @@ class TimTableSeeder extends Seeder
     public function run()
     {
       $data = [
-        'user_id' => 2,
-        'posisi' => 'Web Developer',
+        'user_id' => 3,
+        'posisi' => 'Admin',
       ];
 
       Tim::create($data);
