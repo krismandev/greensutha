@@ -1,8 +1,4 @@
 /* Base */
-@font-face {
-font-family: aclonica;
-src: url(frontend/fonts/Aclonica.ttf);
-}
 
 body {
   line-height: 1.7;

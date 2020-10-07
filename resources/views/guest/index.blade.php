@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{asset('frontend/css/aos.css')}}">
 
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/css/aclonica.css')}}">
+
     <style media="screen">
       .foto{
 
@@ -102,7 +104,7 @@
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
             <span class="caption d-block mb-2 font-secondary font-weight-bold">Kampus Hijau</span>
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">UIN Sultan Thaha Saifuddin Jambi</h2>
+            <h2 class="site-section-heading text-uppercase text-center font-secondary">UIN Sulthan Thaha Saifuddin Jambi</h2>
           </div>
         </div>
         <div class="row border-responsive">
@@ -110,42 +112,36 @@
             <div class="text-center">
               <span class="lnr lnr-apartment display-4 d-block mb-3 text-primary"></span>
               <h3 class="text-uppercase h4 mb-3">Penataan dan Infrastruktur</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis?</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
             <div class="text-center">
               <span class="lnr lnr-sun display-4 d-block mb-3 text-primary"></span>
               <h3 class="text-uppercase h4 mb-3">Energi dan Perubahan Iklim</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis?</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <span class="lnr lnr-trash display-4 d-block mb-3 text-primary"></span>
               <h3 class="text-uppercase h4 mb-3">Limbah</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis?</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="text-center">
               <span class="lnr lnr-drop display-4 d-block mb-3 text-primary"></span>
               <h3 class="text-uppercase h4 mb-3">Air</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis?</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <span class="lnr lnr-bus display-4 d-block mb-3 text-primary"></span>
               <h3 class="text-uppercase h4 mb-3">Transportasi</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis?</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <span class="lnr lnr-book display-4 d-block mb-3 text-primary"></span>
               <h3 class="text-uppercase h4 mb-3">Pendidikan dan Penelitian</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nobis?</p>
             </div>
           </div>
         </div>
