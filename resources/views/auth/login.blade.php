@@ -37,7 +37,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="{{asset('admin/assets/img/cl1.png')}}" alt="Klorofil Logo" style="height: 150px; width: 150px;"></div>
+								<div class="logo text-center"><img src="{{asset('admin/assets/img/logo-uin.jpg')}}" alt="Klorofil Logo" style="height: 150px; width: 150px;"></div>
 								<p class="lead">Login to your account</p>
 							</div>
 							<form class="form-auth-small" action="" method="POST">
