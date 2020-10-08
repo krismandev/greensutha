@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+*/ 
 Auth::routes();
 Route::get('/','HomeController@index')->name('home');
 
@@ -33,7 +33,7 @@ Route::get('/event','EventController@getEventUser')->name('getEventUser');
 Route::get('selayang-pandang','TentangController@getSelayangPandangUser')->name('getSelayangPandangUser');
 Route::get('/tim','TimController@getTimUser')->name('getTimUser');
 Route::get('/kerja-sama','TentangController@getMitraUser')->name('getMitraUser');
-
+Route::get('/makna-logo','MaknaLogoController@getMaknaLogoUser')->name('getMaknaLogoUser');
 
 Route::get('/photo','GaleriController@getFotoUser')->name('getFotoUser');
 Route::get('/poster','GaleriController@getPosterUser')->name('getPosterUser');
@@ -98,6 +98,11 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
       Route::post('/','TentangController@storeMitra')->name('storeMitra');
       Route::get('/delete/{id}','TentangController@deleteMitra')->name('deleteMitra');
     });
+
+    Route::group(['prefix'=>'logo'],function(){
+      Route::get('/','MaknaLogoController@getMaknaLogo')->name('getMaknaLogo');
+      Route::post('/','MaknaLogoController@storeMaknaLogo')->name('storeMaknaLogo');
+    });
   });
 
   Route::group(['prefix'=>'green-campus'],function(){
@@ -151,6 +156,8 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
     Route::get('/delete/{id}','PesanController@deletePesan')->name('deletePesan');
 
   });
+
+  
 
 });
 

@@ -20,6 +20,7 @@ src: url('frontend/fonts/Aclonica.ttf');
       <div class="row align-items-center">
         <div class="col-2">
           <h2 class="mb-0 site-logo"><a href="{{route('home')}}" class="font-weight-bold">GreenSUTHA</a></h2>
+          <!-- <a href="#"> <i class="lnr lnr-flag"></i> </a> -->
         </div>
         <div class="col-10">
           <nav class="site-navigation text-right" role="navigation">
@@ -33,6 +34,7 @@ src: url('frontend/fonts/Aclonica.ttf');
                   <ul class="dropdown arrow-top">
                     <li><a href="{{route('getSelayangPandangUser')}}">Selayang Pandang</a></li>
                     <li><a href="{{route('getTimUser')}}">Tim GreenSutha</a></li>
+                    <li><a href="{{route('getMaknaLogoUser')}}">Makna Logo</a></li>
                     <li><a href="{{route('getMitraUser')}}">Kerja sama</a></li>
                   </ul>
                 </li>
@@ -69,6 +71,7 @@ src: url('frontend/fonts/Aclonica.ttf');
                   </ul>
                 </li>
                 <li class="" ><a href="{{route('kontakUser')}}">Kontak</a></li>
+                <li class="" ><a href="#"> <i class="lnr lnr-flag"></i> </a></li>
               </ul>
             </div>
           </nav>

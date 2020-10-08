@@ -88,8 +88,8 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6 text-center mb-3 mb-md-0">
-            <h2 class="text-uppercase text-white mb-4" data-aos="fade-up">Try For Your Next Project</h2>
-            <a href="#" class="btn btn-bg-primary font-secondary text-uppercase" data-aos="fade-up" data-aos-delay="100">Contact Us</a>
+            <h2 class="text-uppercase text-white mb-4" data-aos="fade-up">Lebih dekat dengan kami</h2>
+            <a href="{{route('kontakUser')}}" class="btn btn-bg-primary font-secondary text-uppercase" data-aos="fade-up" data-aos-delay="100">Kontak kami</a>
           </div>
         </div>
       </div>
@@ -103,43 +103,29 @@
 
 
         <div class="row">
-          <div class="col-md-4 mb-4 mb-md-0">
-            <h3 class="footer-heading mb-4 text-white">About</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-            <p><a href="#" class="btn btn-primary text-white px-4">Read More</a></p>
-          </div>
+
           <div class="col-md-5 mb-4 mb-md-0 ml-auto">
             <div class="row mb-4">
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                <h3 class="footer-heading mb-4 text-white">Menu Cepat</h3>
                   <ul class="list-unstyled">
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Tentang</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Privacy</a></li>
+                    <li><a href="{{route('home')}}">Beranda</a></li>
+                    <li><a href="{{route('getSelayangPandangUser')}}">Tentang</a></li>
+                    <li><a href="{{route('getPenataanUser')}}">Green Sutha</a></li>
+                    <li><a href="{{route('getEventUser')}}">Event</a></li>
                   </ul>
               </div>
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Free Templates</h3>
+
                   <ul class="list-unstyled">
-                    <li><a href="#">HTML5 / CSS3</a></li>
-                    <li><a href="#">Clean Design</a></li>
-                    <li><a href="#">Responsive</a></li>
-                    <li><a href="#">Multi Purpose Template</a></li>
+                    <li><a href="{{route('getPostsUser')}}">Berita</a></li>
+                    <li><a href="{{route('getFotoUser')}}">Gallery</a></li>
+                    <li><a href="{{route('kontakUser')}}">Kontak</a></li>
                   </ul>
               </div>
             </div>
 
-            <div class="row mb-5">
-              <div class="col-md-12">
-              <h3 class="footer-heading mb-4 text-white">Stay up to date</h3>
-              <form action="#" class="d-flex footer-subscribe">
-                <input type="text" class="form-control rounded-0" placeholder="Enter your email">
-                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
-              </form>
-            </div>
-            </div>
+            
           </div>
 
 

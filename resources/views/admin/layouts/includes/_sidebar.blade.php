@@ -36,6 +36,7 @@
       		<a href="#tentang" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/tentang*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-text-align-right"></i> <span>Tentang</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
       		<div id="tentang" class="collapse" aria-expanded="false" style="height: 0px;">
       			<ul class="nav">
+              <li class="{{(request()->is('dashboard/logo*')) ? 'active' : ''}}"><a href="{{route('getMaknaLogo')}}" >Makna Logo </a></li>
       				<li class="{{(request()->is('dashboard/selayang-pandang*')) ? 'active' : ''}}"><a href="{{route('getSelayangPandang')}}" >Selayang Pandang </a></li>
               <li class="{{(request()->is('dashboard/kerjasama*')) ? 'active' : ''}}"><a href="{{route('getMitra')}}" >Kerja sama </a></li>
 
