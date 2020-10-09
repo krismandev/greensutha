@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="{{asset('frontend/css/aos.css')}}">
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('frontend/css/docs.css')}}" rel="stylesheet">
+    <link href="{{asset('frontend/css/flag-icon.css')}}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <style media="screen">
@@ -125,7 +128,7 @@
               </div>
             </div>
 
-            
+
           </div>
 
 
@@ -175,7 +178,7 @@
   <script src="{{asset('frontend/js/aos.js')}}"></script>
   <script src="{{asset('frontend/js/main.js')}}"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+  <script src="{{asset('frontend/js/docs.js')}}"></script>
 
   </body>
 </html>

@@ -1,7 +1,8 @@
 <?php
 return [
+  'switch_language' => 'EN',
 	'beranda' => 'Home',
-  'tentang' => 'About'
+  'tentang' => 'About',
   'tentang_green_sutha' => [
     'selayang_pandang' => 'Overview',
     'tim' => 'Our Team',
@@ -17,7 +18,7 @@ return [
     'pendidikan' => 'Education & Research'
 
   ],
-  'event' => 'Event',
+  'event' => 'Events',
   'award' => 'GreenSutha Award',
   'berita' => 'News',
   'kategori' => [

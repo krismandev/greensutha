@@ -41,7 +41,7 @@ Route::get('/poster','GaleriController@getPosterUser')->name('getPosterUser');
 Route::get('/kontak','KontakController@kontakUser')->name('kontakUser');
 Route::post('/pesan','PesanController@storePesan')->name('storePesan');
 
-
+Route::get('lang/{language}', 'LocalizationController@switch')->name('localization.switch');
 
 
 Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 'dashboard'], function(){

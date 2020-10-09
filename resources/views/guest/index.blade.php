@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="{{asset('frontend/css/aos.css')}}">
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('frontend/css/docs.css')}}" rel="stylesheet">
+    <link href="{{asset('frontend/css/flag-icon.css')}}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/aclonica.css')}}">
 
@@ -89,7 +93,9 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Selayang Pandang</h2>
+            <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
+
+            <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('index.selayang_pandang')}}</h2>
           </div>
         </div>
         <div class="row content">
@@ -103,7 +109,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
-            <span class="caption d-block mb-2 font-secondary font-weight-bold">Kampus Hijau</span>
+            <span class="caption d-block mb-2 font-secondary font-weight-bold">{{__('index.kampus_hijau')}}</span>
             <h2 class="site-section-heading text-uppercase text-center font-secondary">UIN Sulthan Thaha Saifuddin Jambi</h2>
           </div>
         </div>
@@ -111,37 +117,37 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
             <div class="text-center">
               <span class="lnr lnr-apartment display-4 d-block mb-3 text-primary"></span>
-              <h3 class="text-uppercase h4 mb-3">Penataan dan Infrastruktur</h3>
+              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.penataan')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
             <div class="text-center">
               <span class="lnr lnr-sun display-4 d-block mb-3 text-primary"></span>
-              <h3 class="text-uppercase h4 mb-3">Energi dan Perubahan Iklim</h3>
+              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.energi')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <span class="lnr lnr-trash display-4 d-block mb-3 text-primary"></span>
-              <h3 class="text-uppercase h4 mb-3">Limbah</h3>
+              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.limbah')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="text-center">
               <span class="lnr lnr-drop display-4 d-block mb-3 text-primary"></span>
-              <h3 class="text-uppercase h4 mb-3">Air</h3>
+              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.air')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <span class="lnr lnr-bus display-4 d-block mb-3 text-primary"></span>
-              <h3 class="text-uppercase h4 mb-3">Transportasi</h3>
+              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.transportasi')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
               <span class="lnr lnr-book display-4 d-block mb-3 text-primary"></span>
-              <h3 class="text-uppercase h4 mb-3">Pendidikan dan Penelitian</h3>
+              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.pendidikan')}}</h3>
             </div>
           </div>
         </div>
@@ -155,7 +161,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Event</h2>
+            <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('index.event')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -186,7 +192,7 @@
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
             <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
-            <h2 class="site-section-heading text-center text-uppercase">Tim Pengelola</h2>
+            <h2 class="site-section-heading text-center text-uppercase">{{__('index.tim')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -221,7 +227,7 @@
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
             <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
-            <h2 class="site-section-heading text-center text-uppercase">Berita terbaru</h2>
+            <h2 class="site-section-heading text-center text-uppercase">{{__('index.berita_terbaru')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -234,7 +240,7 @@
                 <h2 class="font-secondary text-uppercase"><a href="{{route('showPostUser',$post->slug)}}">{!!Str::limit($post->judul,50)!!}</a></h2>
                 <span class="d-block mb-3">Oleh {{$post->user->name}} &mdash; {{date('d M Y',strtotime($post->created_at))}}</span>
                 <p>{!!Str::limit($post->konten,60)!!}</p>
-                <p><a href="{{route('showPostUser',$post->slug)}}">Baca selengkapnya</a></p>
+                <p><a href="{{route('showPostUser',$post->slug)}}">{{__('index.baca_selengkapnya')}}</a></p>
               </div>
             </div>
           </div>
@@ -249,7 +255,7 @@
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
             <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Foto Gallery</h2>
+            <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('index.foto')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -269,7 +275,7 @@
         <div class="row mb-5">
           <div class="col-md-12 text-center" data-aos="fade">
             <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Poster</h2>
+            <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('index.poster')}}</h2>
           </div>
         </div>
         <div class="row">
@@ -290,8 +296,8 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6 text-center mb-3 mb-md-0">
-            <h2 class="text-uppercase text-white mb-4" data-aos="fade-up">Lebih dekat dengan kami</h2>
-            <a href="{{route('kontakUser')}}" class="btn btn-bg-primary font-secondary text-uppercase" data-aos="fade-up" data-aos-delay="100">Kontak kami</a>
+            <h2 class="text-uppercase text-white mb-4" data-aos="fade-up">{{__('index.lebih_dekat')}}</h2>
+            <a href="{{route('kontakUser')}}" class="btn btn-bg-primary font-secondary text-uppercase" data-aos="fade-up" data-aos-delay="100">{{__('index.kontak')}}</a>
           </div>
         </div>
       </div>
@@ -309,40 +315,32 @@
           <div class="col-md-5 mb-4 mb-md-0 ml-auto">
             <div class="row mb-4">
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Menu Cepat</h3>
+                <h3 class="footer-heading mb-4 text-white">{{__('index.menu_cepat')}}</h3>
                   <ul class="list-unstyled">
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Tentang</a></li>
-                    <li><a href="#">Green Sutha</a></li>
-                    <li><a href="#">Event</a></li>
+                    <li><a href="{{route('home')}}">{{__('navbar.beranda')}}</a></li>
+                    <li><a href="{{route('getSelayangPandangUser')}}">{{__('navbar.tentang')}}</a></li>
+                    <li><a href="{{route('getPenataanUser')}}">{{__('navbar.green_campus')}}</a></li>
+                    <li><a href="{{route('getEventUser')}}">{{__('navbar.event')}}</a></li>
                   </ul>
               </div>
               <div class="col-md-6">
 
                   <ul class="list-unstyled">
-                    <li><a href="#">Berita</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Kontak</a></li>
+                    <li><a href="{{route('getPostsUser')}}">{{__('navbar.berita')}}</a></li>
+                    <li><a href="{{route('getFotoUser')}}">{{__('navbar.gallery')}}</a></li>
+                    <li><a href="{{route('kontakUser')}}">{{__('navbar.kontak')}}</a></li>
                   </ul>
               </div>
             </div>
 
-            <div class="row mb-5">
-              <div class="col-md-12">
-              <h3 class="footer-heading mb-4 text-white">Stay up to date</h3>
-              <form action="#" class="d-flex footer-subscribe">
-                <input type="text" class="form-control rounded-0" placeholder="Enter your email">
-                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
-              </form>
-            </div>
-            </div>
+
           </div>
 
 
           <div class="col-md-2">
 
             <div class="row">
-            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Sosial Media</h3></div>
               <div class="col-md-12">
                 <p>
                   <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
@@ -385,7 +383,13 @@
   <script src="{{asset('frontend/js/jquery.animateNumber.min.js')}}"></script>
   <script src="{{asset('frontend/js/aos.js')}}"></script>
 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{asset('frontend/css/docs.css')}}" rel="stylesheet">
+  <link href="{{asset('frontend/css/flag-icon.css')}}" rel="stylesheet">
+
+
   <script src="{{asset('frontend/js/main.js')}}"></script>
+  <script src="{{asset('frontend/js/docs.js')}}"></script>
 
 
   </body>

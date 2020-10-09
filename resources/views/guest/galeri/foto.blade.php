@@ -5,8 +5,8 @@
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-12 text-center" data-aos="fade">
-        <span class="caption d-block mb-2 font-secondary font-weight-bold">Photo Gallery</span>
-        <h2 class="site-section-heading text-uppercase text-center font-secondary">Company's Photo Gallery</h2>
+        <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSUTHA</span>
+        <h2 class="site-section-heading text-uppercase text-center font-secondary">Foto</h2>
       </div>
     </div>
     <div class="row">
