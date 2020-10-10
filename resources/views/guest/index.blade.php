@@ -74,7 +74,7 @@
                 <!-- <a href="#selayang_pandang"><h3 class="font-secondary  font-weight-bold text-uppercase" >Get Started </a> <a href="https://www.youtube.com/watch?v=U7o8jRZPE-A" data-fancybox="gallery"><i class="lnr lnr-film-play" style="color: #fff;"></i></a></h3> -->
                 <!-- <h3 style="color: #fff;"> <a href="#selayang_pandang" id="link_selayang_pandang"> Get Start</a> <a href="https://www.youtube.com/watch?v=U7o8jRZPE-A" data-fancybox="gallery"><i class="lnr lnr-film-play" style="color: #fff;"></i></a> </h3> -->
                 <!-- <h1 class="font-secondary  font-weight-bold text-uppercase">Get Started</h1> -->
-                <a href="#selayang_pandang" class="btn btn-primary" style="border-radius: 10px;"><h3 class="font-secondary  font-weight-bold text-uppercase" style="color: #fff;">Get Started</h3> </a> <a href="{{$video_banner->link_video}}" data-fancybox="gallery" style="margin-left: 10px;"> <h2 style="color: #fff;"> <i class="lnr lnr-film-play"></i> </h2> </a>
+                <a href="#selayang_pandang" class="btn btn-primary" style="border-radius: 10px;"><h3 class="font-secondary  font-weight-bold text-uppercase" style="color: #fff;">Get Started</h3> </a> @if($video_banner != null) <a href="{{$video_banner->link_video}}" data-fancybox="gallery" style="margin-left: 10px;"> @else <a href="https://www.youtube.com/watch?v=OpuBatkuuNc" data-fancybox="gallery" style="margin-left: 10px;"> @endif <h2 style="color: #fff;"> <i class="lnr lnr-film-play"></i> </h2> </a>
 
 
 
