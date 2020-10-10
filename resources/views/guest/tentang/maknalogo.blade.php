@@ -8,8 +8,9 @@
         <h2 class="site-section-heading text-uppercase text-center font-secondary">Makna Logo</h2>
       </div>
     </div>
+    @if($makna_logo != null)
     <center>
-        
+
       <div class="row mb-10">
         <div class="col-md-12 text-center" data-aos="fade">
           <img src="{{url('gambar/'.$makna_logo->gambar_makna)}}" class="text-center" style="width: 300px;">
@@ -21,6 +22,7 @@
         </div>
       </div>
     </center>
+    @endif
   </div>
 </div>
 @endsection

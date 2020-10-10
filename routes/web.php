@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/
 Auth::routes();
 Route::get('/','HomeController@index')->name('home');
 
@@ -75,6 +75,11 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
     Route::get('/','BannerController@getBanner')->name('getBanner');
     Route::post('/','BannerController@storeBanner')->name('storeBanner');
     Route::get('/delete/{id}','BannerController@deleteBanner')->name('deleteBanner');
+  });
+
+  Route::group(['prefix'=>'video-banner'],function(){
+    Route::get('/','BannerController@getVideoBanner')->name('getVideoBanner');
+    Route::post('/','BannerController@storeVideoBanner')->name('storeVideoBanner');
   });
 
   Route::group(['prefix'=>'kategori'],function(){
@@ -157,7 +162,7 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
 
   });
 
-  
+
 
 });
 

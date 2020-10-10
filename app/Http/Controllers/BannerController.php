@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Banner;
+use App\VideoBanner;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -40,4 +41,38 @@ class BannerController extends Controller
     $banner->delete();
     return redirect()->back()->with('success','Berhasil menghapus banner');
   }
+
+
+  public function getVideoBanner()
+    {
+      $video_banner = VideoBanner::first();
+      return view('admin.getVideoBanner',compact(['video_banner']));
+    }
+
+    public function storeVideoBanner(Request $request)
+    {
+      $video_banner = VideoBanner::first();
+      $request->validate([
+        'link_video' => 'required'
+      ]);
+
+      if ($video_banner == null) {
+        $link_video = VideoBanner::insertGetId([
+          'link_video' => $request->link_video
+        ]);
+        return redirect()->back()->with('success','Data  berhasil diupdate');
+      }else {
+        $link_video = [
+          'link_video' => $request->link_video
+        ];
+        $video_banner->update($link_video);
+      }
+      return redirect()->back()->with('success','Data  berhasil disimpan');
+    }
+
+    public function getMaknaLogoUser()
+    {
+    	$video_banner = MaknaLogo::first();
+    	return view('guest.tentang.maknalogo',compact('video_banner'));
+    }
 }

@@ -7,7 +7,15 @@
         <li><a href="{{route('index_admin')}}" class="{{(request()->is('dashboard')) ? 'active' : ''}}"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
         <li><a href="{{route('getKategori')}}" class="{{(request()->is('dashboard/kategori*')) ? 'active' : ''}}"><i class="lnr lnr-tag"></i> <span>Kategori</span></a></li>
         <li><a href="{{route('getPosts')}}" class="{{(request()->is('dashboard/berita*')) ? 'active' : ''}}"><i class="lnr lnr-pencil"></i> <span>Berita</span></a></li>
-        <li><a href="{{route('getBanner')}}" class="{{(request()->is('dashboard/banner*')) ? 'active' : ''}}"><i class="lnr lnr-picture"></i> <span>Banner</span></a></li>
+        <li>
+      		<a href="#banner" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/banner*') || request()->is('dashboard/video-banner*') ) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Banner</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+      		<div id="banner" class="collapse" aria-expanded="false" style="height: 0px;">
+      			<ul class="nav">
+      				<li class="{{(request()->is('dashboard/foto*')) ? 'active' : ''}}"><a href="{{route('getBanner')}}" >Gambar Banner </a></li>
+      				<li class="{{(request()->is('dashboard/poster*')) ? 'active' : ''}}"><a href="{{route('getVideoBanner')}}">Video Banner </a></li>
+      			</ul>
+      		</div>
+      	</li>
         <li><a href="{{route('getEvent')}}" class="{{(request()->is('dashboard/event*')) ? 'active' : ''}}"><i class="lnr lnr-hourglass"></i> <span>Event</span></a></li>
 
         <li>
