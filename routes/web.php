@@ -16,6 +16,7 @@ Route::get('/','HomeController@index')->name('home');
 
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/login','AuthController@postLogin')->name('postLogin');
+Route::get('/logout','AuthController@logout')->name('logout')->middleware('auth');
 Route::group(['prefix'=>'berita'],function(){
   Route::get('/{slug}','PostController@showPostUser')->name('showPostUser');
   Route::get('/','PostController@getPostsUser')->name('getPostsUser');
