@@ -20,6 +20,8 @@ Route::get('/logout','AuthController@logout')->name('logout')->middleware('auth'
 Route::group(['prefix'=>'berita'],function(){
   Route::get('/{slug}','PostController@showPostUser')->name('showPostUser');
   Route::get('/','PostController@getPostsUser')->name('getPostsUser');
+  Route::get('/{kategori}','PostController@getPostsKategori')->name('getPostsKategori');
+
 });
 
 Route::get('/penataan&infrastruktur','GreenCampusController@getPenataanUser')->name('getPenataanUser');
@@ -57,7 +59,6 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
     Route::get('/edit/{id}','PostController@editPost')->name('editPost');
     Route::patch('/','PostController@updatePost')->name('updatePost');
     Route::get('/delete/{id}','PostController@deletePost')->name('deletePost');
-    Route::get('/{kategori}','PostController@getPostsKategori')->name('getPostsKategori');
   });
 
   Route::group(['prefix'=>'foto'],function(){
