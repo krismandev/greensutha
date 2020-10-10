@@ -73,7 +73,7 @@ src: url('frontend/fonts/Aclonica.ttf');
                 </li>
                 <li class="" ><a href="{{route('kontakUser')}}">{{__('navbar.kontak')}}</a></li>
                 <li class="has-children">
-                  <a href="#"> <span class="flag-icon flag-icon-gr" style="background-size:contain;"></span> </a>
+                  <a href="#"> {{__('navbar.switch_language')}} </a>
                   <ul class="dropdown arrow-top">
                     <li><a href="{{ route('localization.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">English</a></li>
                     <li><a href="{{ route('localization.switch', 'id') }}" class="{{ app()->getLocale() == 'id' ? 'active' : '' }}">Indonesia</a></li>
