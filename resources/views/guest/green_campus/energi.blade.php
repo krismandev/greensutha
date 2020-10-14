@@ -1,12 +1,12 @@
 @extends('layouts.innerpage')
-@section('title','Energi & Perubahan Iklim')
+@section('title',__('navbar.green_sutha.energi'))
 @section('content')
 <div class="site-section first-section">
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-12 text-center aos-init aos-animate" data-aos="fade">
         <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSutha</span>
-        <h2 class="site-section-heading text-uppercase text-center font-secondary">Energi & Perubahan Iklim</h2>
+        <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('navbar.green_sutha.energi')}}</h2>
       </div>
     </div>
     @if($energis->count() != null)

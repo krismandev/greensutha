@@ -45,7 +45,7 @@ class GreenCampusController extends Controller
       $link_awal = $request->link;
       $sebelum = 'watch?v=';
       $sesudah = ['embed/'];
-      $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal); 
+      $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
 
     }
 
@@ -408,7 +408,8 @@ class GreenCampusController extends Controller
   public function getTransportasiUser()
   {
     $transportasis = GreenCampus::where('jenis','transportasi')->get();
-    return view('guest.green_campus.transportasi',compact(['transportasis']));
+    $judul = 'Hallo';
+    return view('guest.green_campus.transportasi',compact(['transportasis','judul']));
   }
 
   public function getPendidikanUser()

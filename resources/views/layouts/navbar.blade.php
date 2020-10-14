@@ -35,7 +35,7 @@ src: url('frontend/fonts/Aclonica.ttf');
                   <ul class="dropdown arrow-top">
                     <li><a href="{{route('getSelayangPandangUser')}}">{{__('navbar.tentang_green_sutha.selayang_pandang')}}</a></li>
                     <li><a href="{{route('getTimUser')}}">{{__('navbar.tentang_green_sutha.tim')}}</a></li>
-                    <li><a href="{{route('getMaknaLogoUser')}}">Makna Logo</a></li>
+                    <li><a href="{{route('getMaknaLogoUser')}}">{{__('navbar.tentang_green_sutha.makna_logo')}}</a></li>
                     <li><a href="{{route('getMitraUser')}}">{{__('navbar.tentang_green_sutha.mitra')}}</a></li>
                   </ul>
                 </li>

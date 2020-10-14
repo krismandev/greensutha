@@ -1,5 +1,5 @@
 @extends('layouts.innerpage')
-@section('title','Kontak')
+@section('title',__('navbar.kontak'))
 @section('content')
 <div class="site-section first-section" data-aos="fade">
   <div class="container">
@@ -45,7 +45,7 @@
 
         </form>
       </div>
-
+      @if($kontak != null)
       <div class="col-lg-4">
         <div class="p-4 mb-3 bg-white">
           <h3 class="h5 text-black mb-3">{{$kontak->nama}}</h3>
@@ -62,6 +62,7 @@
 
 
       </div>
+      @endif
     </div>
   </div>
 </div>

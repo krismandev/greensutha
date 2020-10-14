@@ -1,12 +1,12 @@
 @extends('layouts.innerpage')
-@section('title','Transportasi')
+@section('title',__('navbar.green_sutha.transportasi'))
 @section('content')
 <div class="site-section first-section">
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-12 text-center aos-init aos-animate" data-aos="fade">
         <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSutha</span>
-        <h2 class="site-section-heading text-uppercase text-center font-secondary">Transportasi</h2>
+        <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('navbar.green_sutha.transportasi')}}</h2>
       </div>
     </div>
     @if($transportasis->count() != null)

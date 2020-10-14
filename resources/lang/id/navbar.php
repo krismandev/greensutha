@@ -6,6 +6,7 @@ return [
   'tentang_green_sutha' => [
     'selayang_pandang' => 'Selayang Pandang',
     'tim' => 'Tim GreenSutha',
+    'makna_logo' => 'Logo',
     'mitra' => 'Kerjasama'
   ],
   'green_campus' => 'Green Sutha',

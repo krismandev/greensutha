@@ -5,12 +5,13 @@ return [
   'tentang' => 'About',
   'tentang_green_sutha' => [
     'selayang_pandang' => 'Overview',
+    'makna_logo' => 'Logo',
     'tim' => 'Our Team',
     'mitra' => 'Partners'
   ],
   'green_campus' => 'Green Sutha',
   'green_sutha' => [
-    'penataan' => 'Arrangement & Infrastructure',
+    'penataan' => 'Settings & Infrastructure',
     'energi' => 'Energy & climate change',
     'limbah' => 'Waste',
     'air' => 'Water',
