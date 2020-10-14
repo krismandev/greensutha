@@ -16,8 +16,15 @@
       			</ul>
       		</div>
       	</li>
-        <li><a href="{{route('getEvent')}}" class="{{(request()->is('dashboard/event*')) ? 'active' : ''}}"><i class="lnr lnr-hourglass"></i> <span>Event</span></a></li>
-
+        <li>
+      		<a href="#event" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/event*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-hourglass"></i> <span>Event</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+      		<div id="event" class="collapse" aria-expanded="false" style="height: 0px;">
+      			<ul class="nav">
+      				<li class=""><a href="{{route('getEnvironment')}}" >Environment & Sustainability </a></li>
+      				<li class=""><a href="{{route('getStudent')}}">Student Organization </a></li>
+      			</ul>
+      		</div>
+      	</li>
         <li>
       		<a href="#green-campus" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/green-campus*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-leaf"></i> <span>Green Campus</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
       		<div id="green-campus" class="collapse" aria-expanded="false" style="height: 0px;">

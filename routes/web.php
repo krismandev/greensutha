@@ -45,7 +45,13 @@ Route::get('/kontak','KontakController@kontakUser')->name('kontakUser');
 Route::post('/pesan','PesanController@storePesan')->name('storePesan');
 
 Route::get('lang/{language}', 'LocalizationController@switch')->name('localization.switch');
+Route::group(['prefix'=>'event'],function(){
+  Route::get('/environment&sustainability','EventController@getEnvironmentUser')->name('getEnvironmentUser');
+  Route::get('/student-organization','EventController@getStudentUser')->name('getStudentUser');
 
+
+
+});
 
 Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 'dashboard'], function(){
   Route::get('/','UserController@index')->name('index_admin');
@@ -152,9 +158,17 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
   });
 
   Route::group(['prefix'=>'event'],function(){
-    Route::get('/','EventController@getEvent')->name('getEvent');
-    Route::post('/','EventController@storeEvent')->name('storeEvent');
-    Route::get('/delete/{id}','EventController@deleteEvent')->name('deleteEvent');
+    Route::group(['prefix'=>'environment&sustainability'],function(){
+      Route::get('/','EventController@getEnvironment')->name('getEnvironment');
+      Route::post('/','EventController@storeEnvironment')->name('storeEnvironment');
+      Route::get('/delete/{id}','EventController@deleteEnvironment')->name('deleteEnvironment');
+    });
+    Route::group(['prefix'=>'student-organization'],function(){
+      Route::get('/','EventController@getStudent')->name('getStudent');
+      Route::post('/','EventController@storeStudent')->name('storeStudent');
+      Route::get('/delete/{id}','EventController@deleteStudent')->name('deleteStudent');
+    });
+
   });
 
   Route::group(['prefix'=>'pesan'],function(){

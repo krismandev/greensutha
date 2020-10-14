@@ -172,7 +172,7 @@
               <div class="media-image">
                 <a href="{{url('events/'.$event->gambar)}}" data-fancybox="gallery"> <img src="{{url('events/'.$event->gambar)}}" alt="Image" class="img-fluid" style="width:100%; height:100%;"></a>
                 <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">{{$event->nama_event}}</h2>
+                  <h3 class="font-secondary text-uppercase">{{$event->nama_event}}</h3>
                 </div>
               </div>
               @endforeach
@@ -203,7 +203,7 @@
               <div class="media-image" style="padding:20px;">
                 <img src="{{$tim->getAvatar()}}" alt="Image" class="img-fluid" style="width:100%; height:100%;">
                 <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">{{$tim->user->name}}</h2>
+                  <h3 class="font-secondary text-uppercase">{{$tim->user->name}}</h3>
                   <p>
                     <a href="{{$tim->yt}}" target="_blank" class="p-3"><span class="icon-youtube"></span></a>
                     <a href="{{$tim->fb}}" target="_blank" class="p-3"><span class="icon-facebook"></span></a>
@@ -320,7 +320,7 @@
                     <li><a href="{{route('home')}}">{{__('navbar.beranda')}}</a></li>
                     <li><a href="{{route('getSelayangPandangUser')}}">{{__('navbar.tentang')}}</a></li>
                     <li><a href="{{route('getPenataanUser')}}">{{__('navbar.green_campus')}}</a></li>
-                    <li><a href="{{route('getEventUser')}}">{{__('navbar.event')}}</a></li>
+                    <li><a href="{{route('getEventUser')}}">Event</a></li>
                   </ul>
               </div>
               <div class="col-md-6">

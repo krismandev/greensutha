@@ -51,9 +51,11 @@ src: url('frontend/fonts/Aclonica.ttf');
                   </ul>
                 </li>
                 <li class="has-children">
-                  <a href="#">{{__('navbar.event')}}</a>
+                  <a href="#">Event</a>
                   <ul class="dropdown arrow-top">
-                    <li><a href="{{route('getEventUser')}}">{{__('navbar.award')}}</a></li>
+                    <li><a href="{{route('getEnvironmentUser')}}">{{__('navbar.event.environment')}}</a></li>
+                    <li><a href="{{route('getStudentUser')}}">{{__('navbar.event.student')}}</a></li>
+
                   </ul>
                 </li>
                 <li class="has-children">

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
   public function getPosts(){
-    $posts = Post::orderBy('created_at','desc')->get();
+    $posts = Post::orderBy('created_at','desc')->orderBy('created_at','desc')->get();
     return view('admin.posts.getPosts',compact(['posts']));
   }
 

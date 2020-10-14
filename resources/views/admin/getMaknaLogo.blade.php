@@ -7,6 +7,15 @@
 	<i class="fa fa-check-circle"></i> {{session('success')}}
 </div>
 @endif
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="panel">
   <div class="panel-heading">
     <h3 class="panel-title">Halaman Makna Logo</h3>

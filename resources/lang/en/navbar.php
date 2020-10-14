@@ -19,7 +19,10 @@ return [
     'pendidikan' => 'Education & Research'
 
   ],
-  'event' => 'Events',
+  'event' => [
+    'environment' => 'Environment & Sustainability',
+    'student' => 'Student Organization'
+  ],
   'award' => 'GreenSutha Award',
   'berita' => 'News',
   'kategori' => [

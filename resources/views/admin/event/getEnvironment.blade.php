@@ -1,5 +1,5 @@
 @extends('admin/layouts/master')
-@section('title','Poster')
+@section('title','Environment & Sustainability')
 @section('header')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
@@ -25,58 +25,70 @@
 <div class="panel">
   <div class="panel-heading">
     <div class="col-md-6">
-      <h3 class="panel-title">Halaman poster</h3>
+      <h3 class="panel-title">Halaman Event Environment & Sustainability</h3>
     </div>
     <div class="col-md-6">
-      <a href="#" class="btn btn-primary navbar-btn-right" data-toggle="modal" data-target="#tambahposter"
-         id="btn-tambahposter">
-        Tambah poster
+      <a href="#" class="btn btn-primary navbar-btn-right" data-toggle="modal" data-target="#tambahenvironment"  id="btn-tambahenvironment">
+        Tambah Data
       </a>
     </div>
   </div>
   <div class="panel-body" style="margin-top: 10px;">
-    @if($posters->count() != 0)
-    <table class="table table-hover" id="data_posters_reguler" style="margin-top: 10px;">
+    @if($environments->count() != 0)
+    <table class="table table-hover" id="data_environments_reguler" style="margin-top: 10px;">
       <thead>
         <tr>
           <th>No</th>
+          <th>Nama event</th>
           <th>Gambar</th>
 					<th>Aksi</th>
-
         </tr>
       </thead>
       <tbody>
-				@foreach($posters as $poster)
+
+				@foreach($environments as $environment)
         <tr>
           <td>{{$loop->iteration}}</td>
-          <td> <a href="{{url('galeri/poster/'.$poster->gambar)}}"> <img src="{{url('galeri/poster/'.$poster->gambar)}}" alt="" style="width:100px; height:100px;"></a></td>
-					<td> <a href="#" class="btn btn-danger hapus-poster" title="Hapus"  data-poster_id="{{$poster->id}}"> <i class="lnr lnr-trash"></i> </a> </td>
+          <td>{{$environment->nama_event}}</td>
+          <td> <img src="{{url('events/'.$environment->gambar)}}" alt="" style="max-width: 100px; max-height: 100px;"> </td>
+					<td> <a href="#" class="btn btn-danger hapus-environment" title="Hapus" data-environment_id="{{$environment->id}}"> <i class="lnr lnr-trash"></i> </a> </td>
         </tr>
 				@endforeach
       </tbody>
     </table>
     @else
-    <h3>Belum ada data poster</h3>
+    <h3>Belum ada data Environment & Sustainability</h3>
     @endif
   </div>
 </div>
 
+
+
 <!-- Modal -->
-<div class="modal fade" id="tambahposter" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+<div class="modal fade" id="tambahenvironment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Tambah environment</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-			<form class="" action="{{route('storePoster')}}" method="post" enctype="multipart/form-data">
+			<form class="" action="{{route('storeEnvironment')}}" method="post" enctype="multipart/form-data">
 				@csrf
 	      <div class="modal-body">
           <div class="row form-group">
             <div class="col-md-4">
-              <span>Gambar</span>
+              <span>Nama environment</span>
+            </div>
+            <div class="col-md-8">
+              <input type="hidden" name="user_id" id="user_id" value="">
+              <input type="text" name="nama_event" value="" class="form-control" placeholder="Nama event...">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-4">
+              <span>Gambar </span>
             </div>
             <div class="col-md-8">
               <input type="file" name="gambar" value="" class="form-control">
@@ -98,35 +110,31 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
 	$(document).ready(function() {
+		$('#btn-tambahenvironment').click(function(){
 
-		$('#data_posters_reguler').DataTable();
+		});
+		$('#data_environments_reguler').DataTable();
 
-		$('.hapus-poster').click(function(){
-			const poster_id = $(this).data('poster_id');
-
+		$('.hapus-environment').click(function(){
+			const environment_id = $(this).data('environment_id');
       swal({
         title: "Hapus?",
-        text: "Apa kamu yakin akan menghapus poster ini?",
+        text: "Apa kamu yakin akan menghapus data ini?",
         icon: "warning",
         buttons: true,
         dangerMode: true,
       })
       .then((willDelete) => {
         if (willDelete) {
-          window.location = '../dashboard/poster/delete/'+poster_id;
+          window.location = '/dashboard/event/environment&sustainability/delete/'+environment_id;
         }
       });
-			// const hapus = confirm('Yakin ingin menghapus gambar ini?');
-      //
-			// if (hapus) {
-			// 	window.location = '../dashboard/poster/delete/'+poster_id;
-			// }
 
 
 		});
-
 
 	});
 

@@ -809,7 +809,7 @@ a {
   transition: .3s all ease-in-out;
   line-height: 0;
   text-align: center;
-  font-size: 25px;  }
+  /* font-size: 25px;  } */
   @media (min-width: 768px) {
     .slide-one-item.home-slider .owl-prev, .slide-one-item.home-slider .owl-next {
       font-size: 25px; } }

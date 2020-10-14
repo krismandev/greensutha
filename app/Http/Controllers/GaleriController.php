@@ -72,6 +72,12 @@ class GaleriController extends Controller
 
   }
 
+  public function deletePoster($id)
+  {
+    $poster = Poster::find($id);
+    $poster->delete();
+    return redirect()->back()->with('success','Berhasil menghapus poster');
+  }
 
 
   //USER---------------------

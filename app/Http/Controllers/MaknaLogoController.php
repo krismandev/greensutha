@@ -16,14 +16,18 @@ class MaknaLogoController extends Controller
     {
       $makna_logo = MaknaLogo::first();
       $request->validate([
-        'gambar_makna' => 'required|file|image|mimes:png,jpg,jpeg,gif|max:2048',
+        'gambar_makna' => 'file|image|mimes:png,jpg,jpeg,gif|max:10000',
         'deskripsi' => 'required'
       ]);
+			if ($request->hasFile('gambar_makna')) {
+				$file = $request->file('gambar_makna');
+	      $nama_file = time()."_".$file->getClientOriginalName();
+	      $tujuan_upload = 'gambar';
+	      $file->move($tujuan_upload,$nama_file);
+			}else {
+				$nama_file = $makna_logo->gambar_makna;
+			}
 
-      $file = $request->file('gambar_makna');
-      $nama_file = time()."_".$file->getClientOriginalName();
-      $tujuan_upload = 'gambar';
-      $file->move($tujuan_upload,$nama_file);
 
       if ($makna_logo == null) {
         $makna_baru = MaknaLogo::insertGetId([
