@@ -122,6 +122,7 @@ class PostController extends Controller
   //USER---------------------------
 
   public function showPostUser($slug){
+
     $banners = Banner::all();
     $kategoris = Kategori::all();
     $post = Post::where('slug',$slug)->first();
@@ -137,6 +138,7 @@ class PostController extends Controller
 
   public function getPostsKategori($kategori)
   {
+     //dd("ok");
     $kategoris = Kategori::all();
     $ktg = Kategori::where('nama_kategori',$kategori)->first();
     $posts = Post::where('kategori_id',$ktg->id)->orderBy('created_at','desc')->paginate(6);
