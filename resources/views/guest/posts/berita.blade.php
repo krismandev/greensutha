@@ -7,7 +7,7 @@
   <div class="container">
     <div class="col-md-12 text-center aos-init aos-animate" data-aos="fade">
       <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSutha</span>
-      <h2 class="site-section-heading text-uppercase text-center font-secondary">Semua Berita</h2>
+      <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('navbar.semua')}}</h2>
     </div>
     <div class="row">
       <div class="col-md-8 blog-content">

@@ -52,13 +52,11 @@ Route::get('/kontak','KontakController@kontakUser')->name('kontakUser');
 Route::post('/pesan','PesanController@storePesan')->name('storePesan');
 
 Route::get('lang/{language}', 'LocalizationController@switch')->name('localization.switch');
-Route::group(['prefix'=>'event'],function(){
-  Route::get('/environment&sustainability','EventController@getEnvironmentUser')->name('getEnvironmentUser');
+
+  Route::get('/environment','EventController@getEnvironmentUser')->name('getEnvironmentUser');
   Route::get('/student-organization','EventController@getStudentUser')->name('getStudentUser');
 
 
-
-});
 
 Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 'dashboard'], function(){
   Route::get('/','UserController@index')->name('index_admin');
