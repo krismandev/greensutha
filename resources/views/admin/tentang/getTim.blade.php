@@ -50,7 +50,11 @@
           <td>{{$loop->iteration}}</td>
           <td>{{$tim->user->name}}</td>
           <td> <img src="{{$tim->getAvatar()}}" alt="" style="max-width: 100px; max-height: 100px;"> </td>
-					<td> <a href="#" class="btn btn-primary edit-user" title="Edit" data-toggle="modal" data-target="#edituser" data-tim_id="{{$tim->id}}" data-email="{{$tim->user->email}}" data-name="{{$tim->user->name}}"> <i class="lnr lnr-pencil"></i>  </a> </td>
+					<td>
+						<a href="#" class="btn btn-primary edit-user" title="Edit" data-toggle="modal" data-target="#edituser" data-tim_id="{{$tim->id}}" data-email="{{$tim->user->email}}" data-name="{{$tim->user->name}}" data-posisi="{{$tim->posisi}}"> <i class="lnr lnr-pencil"></i>  </a>
+						<a href="#" class="btn btn-danger hapus-user" title="Hapus" data-tim_id="{{$tim->id}}"> <i class="lnr lnr-trash"></i>  </a>
+
+					</td>
         </tr>
 				@endforeach
       </tbody>
@@ -129,6 +133,14 @@
                 <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nama...">
               </div>
             </div>
+						<div class="row form-group">
+              <div class="col-md-4">
+                <span>Posisi</span>
+              </div>
+              <div class="col-md-8">
+                <input type="text" name="posisi" value="" class="form-control" placeholder="" id="posisi">
+              </div>
+            </div>
             <div class="row form-group">
               <div class="col-md-4">
                 <span>Email </span>
@@ -154,6 +166,8 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
 	$(document).ready(function() {
 		$('#btn-tambahpost').click(function(){
@@ -163,11 +177,36 @@
 			const tim_id = $(this).data('tim_id');
 			const email = $(this).data('email');
 			const name = $(this).data('name');
+			const posisi = $(this).data('posisi');
 
 
 			$('#tim_id').val(tim_id);
 			$('#email').val(email);
 			$('#name').val(name);
+			$('#posisi').val(posisi);
+		});
+
+		$('.hapus-user').click(function(){
+			const tim_id = $(this).data('tim_id');
+
+      swal({
+        title: "Hapus?",
+        text: "Apa kamu yakin akan menghapus data ini?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          window.location = '/dashboard/tim/delete/'+tim_id;
+        }
+      });
+			// const hapus = confirm('Yakin ingin menghapus gambar ini?');
+      //
+			// if (hapus) {
+			// 	window.location = '../dashboard/air/delete/'+air_id;
+			// }
+
 
 		});
 

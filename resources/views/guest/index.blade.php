@@ -114,41 +114,53 @@
           </div>
         </div>
         <div class="row border-responsive">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"> <img src="{{asset('frontend/images/GS-Infra.png')}}" class="img-fluid" alt="" style="width:100px;"> </span>
-              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.penataan')}}</h3>
-            </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right border-left" data-aos="fade-up" data-aos-delay="">
+            <a href="{{route('getPenataanUser')}}">
+              <div class="text-center">
+                <span class="display-4 d-block mb-3 text-primary"> <img src="{{asset('frontend/images/GS-Infra.png')}}" class="img-fluid" alt="" style="width:100px;"> </span>
+                <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.penataan')}}</h3>
+              </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Energy.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
-              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.energi')}}</h3>
-            </div>
+            <a href="{{route('getEnergiUser')}}">
+              <div class="text-center">
+                <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Energy.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
+                <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.energi')}}</h3>
+              </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Waste.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
-              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.limbah')}}</h3>
-            </div>
+            <a href="{{route('getLimbahUser')}}">
+              <div class="text-center">
+                <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Waste.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
+                <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.limbah')}}</h3>
+              </div>
+            </a>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Water.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
-              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.air')}}</h3>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Trans.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
-              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.transportasi')}}</h3>
-            </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right border-left" data-aos="fade-up" data-aos-delay="200">
+            <a href="{{route('getAirUser')}}">
+              <div class="text-center">
+                <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Water.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
+                <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.air')}}</h3>
+              </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
-            <div class="text-center">
-              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Edu.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
-              <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.pendidikan')}}</h3>
-            </div>
+            <a href="{{route('getTransportasiUser')}}">
+              <div class="text-center">
+                <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Trans.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
+                <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.transportasi')}}</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
+            <a href="{{route('getPendidikanUser')}}">
+              <div class="text-center">
+                <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Edu.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
+                <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.pendidikan')}}</h3>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -170,7 +182,7 @@
               @if($events->count() != null)
               @foreach($events as $event)
               <div class="media-image">
-                <a href="{{url('events/'.$event->gambar)}}" data-fancybox="gallery"> <img src="{{url('events/'.$event->gambar)}}" alt="Image" class="img-fluid" style="width:100%; height:100%;"></a>
+                <a href="{{url('events/'.$event->gambar)}}" data-fancybox="gallery"> <img src="{{url('events/'.$event->gambar)}}" alt="Image" class="img-fluid" style="width:100%; height: 220px;"></a>
                 <div class="media-image-body">
                   <h3 class="font-secondary text-uppercase">{{$event->nama_event}}</h3>
                 </div>
@@ -203,7 +215,7 @@
               <div class="media-image" style="padding:20px;">
                 <img src="{{$tim->getAvatar()}}" alt="Image" class="img-fluid" style="width:100%; height:100%;">
                 <div class="media-image-body">
-                  <h3 class="font-secondary text-uppercase">{{$tim->user->name}}</h3>
+                  <h3 class="font-secondary text-center">{{$tim->user->name}}</h3>
                   <p>
                     <a href="{{$tim->yt}}" target="_blank" class="p-3"><span class="icon-youtube"></span></a>
                     <a href="{{$tim->fb}}" target="_blank" class="p-3"><span class="icon-facebook"></span></a>
@@ -235,7 +247,7 @@
           @foreach($posts as $post)
           <div class="col-md-6 col-lg-4 mb-5" data-aos="" data-aos-delay="100">
             <div class="media-image">
-              <a href="{{url('posts/'.$post->gambar)}}"><img src="{{url('posts/'.$post->gambar)}}" alt="Image" class="img-fluid"></a>
+              <a href="{{url('posts/'.$post->gambar)}}"><img src="{{url('posts/'.$post->gambar)}}" alt="Image" class="img-fluid" style="width:100%; height: 220px;"></a>
               <div class="media-image-body">
                 <h2 class="font-secondary text-uppercase"><a href="{{route('showPostUser',$post->slug)}}">{!!Str::limit($post->judul,50)!!}</a></h2>
                 <span class="d-block mb-3">Oleh {{$post->user->name}} &mdash; {{date('d M Y',strtotime($post->created_at))}}</span>

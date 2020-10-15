@@ -165,6 +165,7 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
   Route::group(['prefix'=>'event'],function(){
     Route::group(['prefix'=>'environment&sustainability'],function(){
       Route::get('/','EventController@getEnvironment')->name('getEnvironment');
+      Route::patch('/','EventController@updateEnvironment')->name('updateEnvironment');
       Route::post('/','EventController@storeEnvironment')->name('storeEnvironment');
       Route::get('/delete/{id}','EventController@deleteEnvironment')->name('deleteEnvironment');
     });
@@ -191,7 +192,7 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
 Route::group(['middleware' => ['auth','checkRole:superadmin'],'prefix' => 'dashboard'],function(){
   Route::get('/tim','TimController@getTim')->name('getTim');
   Route::post('/tim','TimController@storeTim')->name('storeTim');
-  Route::get('/tim/{id}/{user_id}','TimController@deleteTim')->name('deleteTim');
+  Route::get('/tim/delete/{id}','TimController@deleteTim')->name('deleteTim');
   Route::post('/tim/update','TimController@updateTim')->name('updateTim');
 });
 

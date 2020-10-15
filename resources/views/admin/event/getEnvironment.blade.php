@@ -59,7 +59,10 @@
             <a href="{{url('events/'.$environment->gambar)}}"> <img src="{{url('events/'.$environment->gambar)}}" alt="" style="width:100px; height:100px;"></a>
           </td>
           @endif
-					<td> <a href="#" class="btn btn-danger hapus-environment" title="Hapus" data-environment_id="{{$environment->id}}"> <i class="lnr lnr-trash"></i> </a> </td>
+					<td>
+						<a href="#" class="btn btn-danger hapus-environment" title="Hapus" data-environment_id="{{$environment->id}}"> <i class="lnr lnr-trash"></i> </a>
+						<a href="#" class="btn btn-primary edit-environment" title="Edit" data-environment_id="{{$environment->id}}" data-nama_event="{{$environment->nama_event}}" data-gambar="{{$environment->gambar}}" data-link="{{$environment->link}}" data-toggle="modal" data-target="#editenvironment"> <i class="lnr lnr-pencil"></i> </a>
+					</td>
         </tr>
 				@endforeach
       </tbody>
@@ -122,6 +125,56 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="editenvironment" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Edit data</h5>
+				<h5 class="modal-title" id="exampleModalScrollableTitle">*Silahkan pilih salah satu ingin upload gambar atau video</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+			<form class="" action="{{route('updateEnvironment')}}" method="post" enctype="multipart/form-data">
+				@csrf
+	      <div class="modal-body">
+          <div class="row form-group">
+            <div class="col-md-4">
+              <span>Nama event</span>
+            </div>
+            <div class="col-md-8">
+              <input type="hidden" name="user_id" id="user_id" value="">
+              <input type="text" name="nama_event" value="" class="form-control" id="nama_event">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-4">
+              <span>Gambar </span>
+            </div>
+            <div class="col-md-8">
+              <input type="file" name="gambar" value="" class="form-control" id="gambar">
+            </div>
+          </div>
+					<div class="row form-group">
+            <div class="col-md-4">
+              <span>Link Video Youtube</span>
+            </div>
+            <div class="col-md-8">
+              <input type="text" name="link" value="" class="form-control" id="link">
+            </div>
+          </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-primary">Save changes</button>
+	      </div>
+			</form>
+
+    </div>
+  </div>
+</div>
 @stop
 @section('linkfooter')
 
@@ -135,6 +188,19 @@
 
 		});
 		$('#data_environments_reguler').DataTable();
+
+		$('.edit-environment').click(function(){
+			const environment_id = $(this).data('environment_id');
+			const nama_event = $(this).data('nama_event');
+			const gambar = $(this).data('gambar');
+			const link = $(this).data('link');
+
+
+			$('#nama_event').val(nama_event);
+			$('#gambar').val(gambar);
+			$('#link').val(link);
+			// $('#posisi').val(posisi);
+		});
 
 		$('.hapus-environment').click(function(){
 			const environment_id = $(this).data('environment_id');

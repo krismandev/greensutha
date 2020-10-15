@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Tim;
+use Str;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -36,6 +37,37 @@ class TimController extends Controller
 
   	return redirect()->back()->with('success','Berhasil menambah tim baru. beritahu anggota baru untuk mengganti passwordnya');
 
+  }
+
+  public function updateTim(Request $request)
+  {
+    $request->validate([
+      'name' => 'required',
+      'email' => 'required',
+      'posisi' => 'required'
+    ]);
+
+    $tim = Tim::where('id',$request->tim_id)->first();
+    User::where('id',$tim->user->id)->update([
+      'name' => $request->name,
+      'email' => $request->email
+    ]);
+    Tim::where('id',$tim->id)->update([
+      'posisi'=>$request->posisi
+    ]);
+    return redirect()->back()->with('success','Berhasil mengupdate data tim');
+  }
+
+  public function deleteTim($id)
+  {
+    $tim = Tim::find($id);
+    $user = User::where('id',$tim->user_id)->update([
+      'isdelete'=>true,
+      'email'=> Str::random(5).'@deletedemail.com'
+    ]);
+    $tim->delete();
+    dd("ok");
+    return redirect()->back()->with('success','Berhasil menghapus data tim');
   }
 
   public function profile(){
