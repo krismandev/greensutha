@@ -23,7 +23,7 @@
       @endforeach
     </div>
     <div class="">
-      {{students->render()}}
+      {{$students->render()}}
     </div>
     @endif
   </div>
