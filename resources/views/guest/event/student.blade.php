@@ -22,6 +22,9 @@
       </div>
       @endforeach
     </div>
+    <div class="">
+      {{students->render()}}
+    </div>
     @endif
   </div>
 </div>

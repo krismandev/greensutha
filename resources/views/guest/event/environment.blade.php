@@ -22,6 +22,9 @@
       </div>
       @endforeach
     </div>
+    <div class="">
+      {{$environments->render()}}
+    </div>
     @endif
   </div>
 </div>

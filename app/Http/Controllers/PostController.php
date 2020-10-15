@@ -144,4 +144,62 @@ class PostController extends Controller
     $posts = Post::where('kategori_id',$ktg->id)->orderBy('created_at','desc')->paginate(6);
     return view('guest.posts.postPerKategori',compact(['posts','kategoris','ktg']));
   }
+
+  public function getBeritaLingkungan()
+  {
+    $kategori = Kategori::where('nama_kategori','Lingkungan')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Lingkungan')->first();
+    return view('guest.posts.getBeritaLingkungan',compact(['posts','ktg']));
+  }
+
+  public function getBeritaIslam()
+  {
+    $kategori = Kategori::where('nama_kategori','Islam')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Islam')->first();
+    return view('guest.posts.getBeritaIslam',compact(['posts','ktg']));
+  }
+
+
+  public function getBeritaSosial()
+  {
+    $kategori = Kategori::where('nama_kategori','Sosial')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Sosial')->first();
+
+    return view('guest.posts.getBeritaSosial',compact(['posts','ktg']));
+  }
+
+  public function getBeritaPendidikan()
+  {
+    $kategori = Kategori::where('nama_kategori','Pendidikan')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Pendidikan')->first();
+    return view('guest.posts.getBeritaPendidikan',compact(['posts','ktg']));
+  }
+
+  public function getBeritaBudaya()
+  {
+    $kategori = Kategori::where('nama_kategori','Budaya')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Budaya')->first();
+    return view('guest.posts.getBeritaBudaya',compact(['posts','ktg']));
+  }
+
+  public function getBeritaEkonomi()
+  {
+    $kategori = Kategori::where('nama_kategori','Ekonomi')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Ekonomi')->first();
+    return view('guest.posts.getBeritaEkonomi',compact(['posts','ktg']));
+  }
+
+  public function getBeritaSains()
+  {
+    $kategori = Kategori::where('nama_kategori','Sains')->first();
+    $posts = Post::where('kategori_id',$kategori->id)->paginate(6);
+    $ktg = Kategori::where('nama_kategori','Sains')->first();
+    return view('guest.posts.getBeritaSains',compact(['posts','ktg']));
+  }
 }

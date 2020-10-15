@@ -1,6 +1,6 @@
 <?php
 return [
-  'switch_language' => 'Pilih Bahasa',
+  'switch_language' => 'Bahasa Indonesia',
 	'beranda' => 'Beranda',
   'tentang' => 'Tentang',
   'tentang_green_sutha' => [

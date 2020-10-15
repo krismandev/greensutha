@@ -116,37 +116,37 @@
         <div class="row border-responsive">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
             <div class="text-center">
-              <span class="lnr lnr-apartment display-4 d-block mb-3 text-primary"></span>
+              <span class="display-4 d-block mb-3 text-primary"> <img src="{{asset('frontend/images/GS-Infra.png')}}" class="img-fluid" alt="" style="width:100px;"> </span>
               <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.penataan')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
             <div class="text-center">
-              <span class="lnr lnr-sun display-4 d-block mb-3 text-primary"></span>
+              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Energy.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
               <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.energi')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
-              <span class="lnr lnr-trash display-4 d-block mb-3 text-primary"></span>
+              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Waste.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
               <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.limbah')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="text-center">
-              <span class="lnr lnr-drop display-4 d-block mb-3 text-primary"></span>
+              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Water.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
               <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.air')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
-              <span class="lnr lnr-bus display-4 d-block mb-3 text-primary"></span>
+              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Trans.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
               <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.transportasi')}}</h3>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
             <div class="text-center">
-              <span class="lnr lnr-book display-4 d-block mb-3 text-primary"></span>
+              <span class="display-4 d-block mb-3 text-primary"><img src="{{asset('frontend/images/GS-Edu.png')}}" class="img-fluid" alt="" style="width:100px;"></span>
               <h3 class="text-uppercase h4 mb-3">{{__('navbar.green_sutha.pendidikan')}}</h3>
             </div>
           </div>

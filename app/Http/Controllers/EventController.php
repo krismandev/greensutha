@@ -106,14 +106,14 @@ class EventController extends Controller
 
     public function getEnvironmentUser()
     {
-      $environments = Event::where('jenis','environment')->get();
+      $environments = Event::where('jenis','environment')->paginate(9);
       return view('guest.event.environment',compact(['environments']));
     }
 
 
     public function getStudentUser()
     {
-      $students = Event::where('jenis','student')->get();
+      $students = Event::where('jenis','student')->paginate(9);
       return view('guest.event.student',compact(['students']));
     }
 

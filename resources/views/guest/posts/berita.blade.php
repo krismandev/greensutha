@@ -26,14 +26,21 @@
           </div>
           @endforeach
         </div>
+        <div class="">
+          {{$posts->render()}}
+        </div>
       </div>
       <div class="col-md-4 sidebar">
         <div class="sidebar-box">
           <div class="categories">
             <h3 class="text-uppercase">Kategori</h3>
-            @foreach($kategoris as $kategori)
-            <li><a href="{{route('getPostsKategori',$kategori->nama_kategori)}}">{{$kategori->nama_kategori}} <span>({{$kategori->sum_post()}})</span></a></li>
-            @endforeach
+            <li><a href="{{route('getBeritaLingkungan')}}">{{__('navbar.kategori.lingkungan')}}</a></li>
+            <li><a href="{{route('getBeritaIslam')}}">{{__('navbar.kategori.islam')}}</a></li>
+            <li><a href="{{route('getBeritaSosial')}}">{{__('navbar.kategori.sosial')}}</a></li>
+            <li><a href="{{route('getBeritaPendidikan')}}">{{__('navbar.kategori.pendidikan')}}</a></li>
+            <li><a href="{{route('getBeritaBudaya')}}">{{__('navbar.kategori.budaya')}}</a></li>
+            <li><a href="{{route('getBeritaEkonomi')}}">{{__('navbar.kategori.ekonomi')}}</a></li>
+            <li><a href="{{route('getBeritaSains')}}">{{__('navbar.kategori.sains')}}</a></li>
           </div>
         </div>
         <!-- <div class="sidebar-box">

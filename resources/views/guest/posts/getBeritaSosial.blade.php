@@ -105,9 +105,13 @@
                     <li class="has-children">
                       <a href="{{route('getPostsUser')}}">{{__('navbar.berita')}}</a>
                       <ul class="dropdown arrow-top">
-                        @foreach($kategoris as $kategori)
-                        <li><a href="{{route('getPostsKategori',$kategori->nama_kategori)}}">{{$kategori->nama_kategori}}</a></li>
-                        @endforeach
+                        <li><a href="{{route('getBeritaLingkungan')}}">{{__('navbar.kategori.lingkungan')}}</a></li>
+                        <li><a href="{{route('getBeritaIslam')}}">{{__('navbar.kategori.islam')}}</a></li>
+                        <li><a href="{{route('getBeritaSosial')}}">{{__('navbar.kategori.sosial')}}</a></li>
+                        <li><a href="{{route('getBeritaPendidikan')}}">{{__('navbar.kategori.pendidikan')}}</a></li>
+                        <li><a href="{{route('getBeritaBudaya')}}">{{__('navbar.kategori.budaya')}}</a></li>
+                        <li><a href="{{route('getBeritaEkonomi')}}">{{__('navbar.kategori.ekonomi')}}</a></li>
+                        <li><a href="{{route('getBeritaSains')}}">{{__('navbar.kategori.sains')}}</a></li>
                       </ul>
                     </li>
                     <li class="has-children">
@@ -144,7 +148,7 @@
       <div class="container">
         <div class="col-md-12 text-center aos-init aos-animate" data-aos="fade">
           <span class="caption d-block mb-2 font-secondary font-weight-bold">GreenSutha</span>
-          <h2 class="site-section-heading text-uppercase text-center font-secondary">{{$ktg->nama_kategori}}</h2>
+          <h2 class="site-section-heading text-uppercase text-center font-secondary">{{__('navbar.kategori.sosial')}}</h2>
         </div>
         <div class="row">
           <div class="col-md-8 blog-content">
@@ -152,7 +156,7 @@
               @foreach($posts as $post)
               <div class="col-md-6 col-lg-6 mb-5">
                 <div class="media-image">
-                  <a href="single.html"><img src="{{url('posts/'.$post->gambar)}}" alt="Image" class="img-fluid"></a>
+                  <a href="#"><img src="{{url('posts/'.$post->gambar)}}" alt="Image" class="img-fluid"></a>
                   <div class="media-image-body">
                     <h2 class="font-secondary text-uppercase"><a href="{{route('showPostUser',$post->slug)}}">{!!Str::limit($post->judul,50)!!}</a></h2>
                     <span class="d-block mb-3">Oleh {{$post->user->name}} &mdash; {{date('d M Y',strtotime($post->created_at))}}</span>
@@ -163,14 +167,21 @@
               </div>
               @endforeach
             </div>
+            <div class="">
+              {{$posts->render()}}
+            </div>
           </div>
           <div class="col-md-4 sidebar">
             <div class="sidebar-box">
               <div class="categories">
                 <h3 class="text-uppercase">Kategori</h3>
-                @foreach($kategoris as $kategori)
-                <li><a href="{{route('getPostsKategori',$kategori->nama_kategori)}}">{{$kategori->nama_kategori}} <span>({{$kategori->sum_post()}})</span></a></li>
-                @endforeach
+                <li><a href="{{route('getBeritaLingkungan')}}">{{__('navbar.kategori.lingkungan')}}</a></li>
+                <li><a href="{{route('getBeritaIslam')}}">{{__('navbar.kategori.islam')}}</a></li>
+                <li><a href="{{route('getBeritaSosial')}}">{{__('navbar.kategori.sosial')}}</a></li>
+                <li><a href="{{route('getBeritaPendidikan')}}">{{__('navbar.kategori.pendidikan')}}</a></li>
+                <li><a href="{{route('getBeritaBudaya')}}">{{__('navbar.kategori.budaya')}}</a></li>
+                <li><a href="{{route('getBeritaEkonomi')}}">{{__('navbar.kategori.ekonomi')}}</a></li>
+                <li><a href="{{route('getBeritaSains')}}">{{__('navbar.kategori.sains')}}</a></li>
               </div>
             </div>
             <!-- <div class="sidebar-box">
@@ -198,40 +209,32 @@
           <div class="col-md-5 mb-4 mb-md-0 ml-auto">
             <div class="row mb-4">
               <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Menu Cepat</h3>
+                <h3 class="footer-heading mb-4 text-white">{{__('index.menu_cepat')}}</h3>
                   <ul class="list-unstyled">
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Tentang</a></li>
-                    <li><a href="#">Green Sutha</a></li>
-                    <li><a href="#">Event</a></li>
+                    <li><a href="{{route('home')}}">{{__('navbar.beranda')}}</a></li>
+                    <li><a href="{{route('getSelayangPandangUser')}}">{{__('navbar.tentang')}}</a></li>
+                    <li><a href="{{route('getPenataanUser')}}">{{__('navbar.green_campus')}}</a></li>
+                    <li><a href="{{route('getEnvironmentUser')}}">Event</a></li>
                   </ul>
               </div>
               <div class="col-md-6">
 
                   <ul class="list-unstyled">
-                    <li><a href="#">Berita</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Kontak</a></li>
+                    <li><a href="{{route('getPostsUser')}}">{{__('navbar.berita')}}</a></li>
+                    <li><a href="{{route('getFotoUser')}}">{{__('navbar.gallery')}}</a></li>
+                    <li><a href="{{route('kontakUser')}}">{{__('navbar.kontak')}}</a></li>
                   </ul>
               </div>
             </div>
 
-            <div class="row mb-5">
-              <div class="col-md-12">
-              <h3 class="footer-heading mb-4 text-white">Stay up to date</h3>
-              <form action="#" class="d-flex footer-subscribe">
-                <input type="text" class="form-control rounded-0" placeholder="Enter your email">
-                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
-              </form>
-            </div>
-            </div>
+
           </div>
 
 
           <div class="col-md-2">
 
             <div class="row">
-            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Sosial Media</h3></div>
               <div class="col-md-12">
                 <p>
                   <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>

@@ -18,12 +18,12 @@ src: url('frontend/fonts/Aclonica.ttf');
   <div class="container">
     <div class="site-navbar" style="background-color: #71bc42;">
       <div class="row align-items-center">
-        <div class="col-2">
+        <div class="col-1">
           <h2 class="mb-0 site-logo"><a href="{{route('home')}}" class="font-weight-bold">GreenSUTHA</a></h2>
 
           <!-- <a href="#"> <i class="lnr lnr-flag"></i> </a> -->
         </div>
-        <div class="col-10">
+        <div class="col-11">
           <nav class="site-navigation text-right" role="navigation">
             <div class="container">
               <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
@@ -61,9 +61,15 @@ src: url('frontend/fonts/Aclonica.ttf');
                 <li class="has-children">
                   <a href="{{route('getPostsUser')}}">{{__('navbar.berita')}}</a>
                   <ul class="dropdown arrow-top">
-                    @foreach($kategoris as $kategori)
-                    <li><a href="{{route('getPostsKategori',$kategori->nama_kategori)}}">{{$kategori->nama_kategori}}</a></li>
-                    @endforeach
+                    <li><a href="{{route('getBeritaLingkungan')}}">{{__('navbar.kategori.lingkungan')}}</a></li>
+                    <li><a href="{{route('getBeritaIslam')}}">{{__('navbar.kategori.islam')}}</a></li>
+                    <li><a href="{{route('getBeritaSosial')}}">{{__('navbar.kategori.sosial')}}</a></li>
+                    <li><a href="{{route('getBeritaPendidikan')}}">{{__('navbar.kategori.pendidikan')}}</a></li>
+                    <li><a href="{{route('getBeritaBudaya')}}">{{__('navbar.kategori.budaya')}}</a></li>
+                    <li><a href="{{route('getBeritaEkonomi')}}">{{__('navbar.kategori.ekonomi')}}</a></li>
+                    <li><a href="{{route('getBeritaSains')}}">{{__('navbar.kategori.sains')}}</a></li>
+
+
                   </ul>
                 </li>
                 <li class="has-children">

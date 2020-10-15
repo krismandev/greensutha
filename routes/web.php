@@ -20,7 +20,14 @@ Route::get('/logout','AuthController@logout')->name('logout')->middleware('auth'
 Route::group(['prefix'=>'berita'],function(){
   Route::get('/{slug}','PostController@showPostUser')->name('showPostUser');
   Route::get('/','PostController@getPostsUser')->name('getPostsUser');
-  Route::get('/kategori/{kategori}','PostController@getPostsKategori')->name('getPostsKategori');
+  // Route::get('/kategori/{kategori}','PostController@getPostsKategori')->name('getPostsKategori');
+  Route::get('/ktg/lingkungan','PostController@getBeritaLingkungan')->name('getBeritaLingkungan');
+  Route::get('/ktg/islam','PostController@getBeritaIslam')->name('getBeritaIslam');
+  Route::get('/ktg/sosial','PostController@getBeritaSosial')->name('getBeritaSosial');
+  Route::get('/ktg/pendidikan','PostController@getBeritaPendidikan')->name('getBeritaPendidikan');
+  Route::get('/ktg/budaya','PostController@getBeritaBudaya')->name('getBeritaBudaya');
+  Route::get('/ktg/ekonomi','PostController@getBeritaEkonomi')->name('getBeritaEkonomi');
+  Route::get('/ktg/sains','PostController@getBeritaSains')->name('getBeritaSains');
 
 });
 
