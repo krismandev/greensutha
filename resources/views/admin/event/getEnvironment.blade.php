@@ -50,7 +50,15 @@
         <tr>
           <td>{{$loop->iteration}}</td>
           <td>{{$environment->nama_event}}</td>
-          <td> <img src="{{url('events/'.$environment->gambar)}}" alt="" style="max-width: 100px; max-height: 100px;"> </td>
+					@if($environment->link != null)
+          <td>
+            <iframe src="{{$environment->link}}" width="100px;" height="100px;" class="img-fluid"></iframe>
+          </td>
+          @else
+          <td>
+            <a href="{{url('events/'.$environment->gambar)}}"> <img src="{{url('events/'.$environment->gambar)}}" alt="" style="width:100px; height:100px;"></a>
+          </td>
+          @endif
 					<td> <a href="#" class="btn btn-danger hapus-environment" title="Hapus" data-environment_id="{{$environment->id}}"> <i class="lnr lnr-trash"></i> </a> </td>
         </tr>
 				@endforeach
@@ -69,7 +77,9 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Tambah environment</h5>
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Tambah data</h5>
+				<h5 class="modal-title" id="exampleModalScrollableTitle">*Silahkan pilih salah satu ingin upload gambar atau video</h5>
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -79,7 +89,7 @@
 	      <div class="modal-body">
           <div class="row form-group">
             <div class="col-md-4">
-              <span>Nama environment</span>
+              <span>Nama event</span>
             </div>
             <div class="col-md-8">
               <input type="hidden" name="user_id" id="user_id" value="">
@@ -92,6 +102,14 @@
             </div>
             <div class="col-md-8">
               <input type="file" name="gambar" value="" class="form-control">
+            </div>
+          </div>
+					<div class="row form-group">
+            <div class="col-md-4">
+              <span>Link Video Youtube</span>
+            </div>
+            <div class="col-md-8">
+              <input type="text" name="link" value="" class="form-control">
             </div>
           </div>
 	      </div>

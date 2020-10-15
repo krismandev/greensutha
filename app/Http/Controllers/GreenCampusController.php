@@ -109,7 +109,7 @@ class GreenCampusController extends Controller
       $sesudah = ['embed/'];
       $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
 
-    }
+    } 
 
     $energi = GreenCampus::create([
       'deskripsi' => $request->deskripsi,

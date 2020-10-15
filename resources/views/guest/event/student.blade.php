@@ -14,7 +14,12 @@
       @foreach($students as $student)
       <div class="col-md-6 col-lg-4 mb-5">
         <div class="media-image">
-          <a href="{{url('events/'.$student->gambar)}}" data-fancybox="gallery"><img src="{{url('events/'.$student->gambar)}}" alt="Image" class="img-fluid"></a>
+          @if($student->link != null)
+          <iframe src="{{$student->link}}" width="100%" height="100%" class="img-fluid"></iframe>
+          @else
+          <a href="{{url('events/'.$student->gambar)}}"><img src="{{url('events/'.$student->gambar)}}" alt="Image" class="img-fluid"></a>
+          @endif
+          <!-- <a href="{{url('events/'.$student->gambar)}}" data-fancybox="gallery"><img src="{{url('events/'.$student->gambar)}}" alt="Image" class="img-fluid"></a> -->
           <div class="media-image-body">
             <h2 class="font-secondary text-uppercase"><a href="#">{{$student->nama_event}}</a></h2>
           </div>

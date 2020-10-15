@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Event;
+use Str;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -46,17 +47,32 @@ class EventController extends Controller
     public function storeEnvironment(Request $request){
       $request->validate([
         'nama_event' => 'required',
-        'gambar' => 'required'
+        'gambar' => 'file|image|mimes:png,jpg,jpeg,gif'
       ]);
 
-      $file_gambar = $request->file('gambar');
-      $nama_file = time()."_".$file_gambar->getClientOriginalName();
-      $tujuan_upload = 'events';
-      $file_gambar->move($tujuan_upload,$nama_file);
+      if ($request->hasFile('gambar')) {
+        $file_gambar = $request->file('gambar');
+        $nama_file_gambar = time()."_".$file_gambar->getClientOriginalName();
+        $tujuan_upload = 'events';
+        $file_gambar->move($tujuan_upload,$nama_file_gambar);
+
+        $link_youtube = null;
+      }else {
+        $nama_file_gambar = null;
+
+
+
+        $link_awal = $request->link;
+        $sebelum = 'watch?v=';
+        $sesudah = ['embed/'];
+        $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
+
+      }
 
       $environment = Event::create([
         'nama_event' => $request->nama_event,
-        'gambar' => $nama_file,
+        'gambar' => $nama_file_gambar,
+        'link'=> $link_youtube,
         'jenis' => 'environment'
       ]);
 
@@ -79,17 +95,30 @@ class EventController extends Controller
     public function storeStudent(Request $request){
       $request->validate([
         'nama_event' => 'required',
-        'gambar' => 'required'
+        'gambar' => 'file|image|mimes:png,jpg,jpeg,gif'
       ]);
 
-      $file_gambar = $request->file('gambar');
-      $nama_file = time()."_".$file_gambar->getClientOriginalName();
-      $tujuan_upload = 'events';
-      $file_gambar->move($tujuan_upload,$nama_file);
+      if ($request->hasFile('gambar')) {
+        $file_gambar = $request->file('gambar');
+        $nama_file_gambar = time()."_".$file_gambar->getClientOriginalName();
+        $tujuan_upload = 'events';
+        $file_gambar->move($tujuan_upload,$nama_file_gambar);
+
+        $link_youtube = null;
+      }else {
+        $nama_file_gambar = null;
+
+        $link_awal = $request->link;
+        $sebelum = 'watch?v=';
+        $sesudah = ['embed/'];
+        $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
+
+      }
 
       $student = Event::create([
         'nama_event' => $request->nama_event,
-        'gambar' => $nama_file,
+        'gambar' => $nama_file_gambar,
+        'link' => $link_youtube,
         'jenis' => 'student'
       ]);
 

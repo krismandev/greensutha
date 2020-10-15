@@ -14,7 +14,12 @@
       @foreach($environments as $environment)
       <div class="col-md-6 col-lg-4 mb-5">
         <div class="media-image">
-          <a href="{{url('events/'.$environment->gambar)}}" data-fancybox="gallery"><img src="{{url('events/'.$environment->gambar)}}" alt="Image" class="img-fluid"></a>
+          @if($environment->link != null)
+          <iframe src="{{$environment->link}}" width="100%" height="100%" class="img-fluid"></iframe>
+          @else
+          <a href="{{url('events/'.$environment->gambar)}}"><img src="{{url('events/'.$environment->gambar)}}" alt="Image" class="img-fluid"></a>
+          @endif
+          <!-- <a href="{{url('events/'.$environment->gambar)}}" data-fancybox="gallery"><img src="{{url('events/'.$environment->gambar)}}" alt="Image" class="img-fluid"></a> -->
           <div class="media-image-body">
             <h2 class="font-secondary text-uppercase"><a href="#">{{$environment->nama_event}}</a></h2>
           </div>
