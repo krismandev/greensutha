@@ -47,10 +47,11 @@
         </tr>
       </thead>
       <tbody>
-
+				<?php $i=1; ?>
 				@foreach($students as $student)
         <tr>
-          <td>{{$loop->iteration}}</td>
+          <td>{{$students->perPage()*($students->currentPage()-1)+$i}}</td>
+					<?php $i++; ?>
           <td>{{$student->nama_event}}</td>
 					@if($student->link != null)
           <td>
@@ -69,6 +70,9 @@
 				@endforeach
       </tbody>
     </table>
+		<div class="">
+			{{$students->links()}}
+		</div>
     @else
     <h3>Belum ada data Student Organization</h3>
     @endif
@@ -189,7 +193,7 @@
 		$('#btn-tambahstudent').click(function(){
 
 		});
-		$('#data_students_reguler').DataTable();
+		// $('#data_students_reguler').DataTable();
 
 
 		$('.edit-student').click(function(){

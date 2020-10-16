@@ -45,10 +45,11 @@
         </tr>
       </thead>
       <tbody>
-
+				<?php $i=1; ?>
 				@foreach($environments as $environment)
         <tr>
-          <td>{{$loop->iteration}}</td>
+          <td>{{$environments->perPage()*($environments->currentPage()-1)+$i}}</td>
+					<?php $i++; ?>
           <td>{{$environment->nama_event}}</td>
 					@if($environment->link != null)
           <td>
@@ -67,6 +68,9 @@
 				@endforeach
       </tbody>
     </table>
+		<div class="">
+			{{$environments->links()}}
+		</div>
     @else
     <h3>Belum ada data Environment & Sustainability</h3>
     @endif
@@ -187,7 +191,7 @@
 		$('#btn-tambahenvironment').click(function(){
 
 		});
-		$('#data_environments_reguler').DataTable();
+		// $('#data_environments_reguler').DataTable();
 
 		$('.edit-environment').click(function(){
 			const environment_id = $(this).data('id');
@@ -204,7 +208,13 @@
 		});
 
 		$('.hapus-environment').click(function(){
+
 			const environment_id = $(this).data('environment_id');
+			// let hapus = confirm("yakin mau hapus?");
+			//
+			// if (hapus) {
+			// 	window.location = '/dashboard/event/environment&sustainability/delete/'+environment_id;
+			// }
       swal({
         title: "Hapus?",
         text: "Apa kamu yakin akan menghapus data ini?",

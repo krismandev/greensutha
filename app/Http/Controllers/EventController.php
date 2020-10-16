@@ -40,7 +40,7 @@ class EventController extends Controller
 
     public function getEnvironment()
     {
-      $environments = Event::where('jenis','environment')->get();
+      $environments = Event::where('jenis','environment')->paginate(8);
       return view('admin.event.getEnvironment',compact(['environments']));
     }
 
@@ -125,7 +125,7 @@ class EventController extends Controller
 
     public function getStudent()
     {
-      $students = Event::where('jenis','student')->get();
+      $students = Event::where('jenis','student')->paginate(8);
       return view('admin.event.getStudent',compact(['students']));
     }
 
