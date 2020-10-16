@@ -61,7 +61,7 @@
           @endif
 					<td>
 						<a href="#" class="btn btn-danger hapus-environment" title="Hapus" data-environment_id="{{$environment->id}}"> <i class="lnr lnr-trash"></i> </a>
-						<a href="#" class="btn btn-primary edit-environment" title="Edit" data-environment_id="{{$environment->id}}" data-nama_event="{{$environment->nama_event}}" data-gambar="{{$environment->gambar}}" data-link="{{$environment->link}}" data-toggle="modal" data-target="#editenvironment"> <i class="lnr lnr-pencil"></i> </a>
+						<a href="#" class="btn btn-primary edit-environment" title="Edit" data-id="{{$environment->id}}" data-nama_event="{{$environment->nama_event}}" data-gambar="{{$environment->gambar}}" data-link="{{$environment->link}}" data-toggle="modal" data-target="#editenvironment"> <i class="lnr lnr-pencil"></i> </a>
 					</td>
         </tr>
 				@endforeach
@@ -138,14 +138,14 @@
         </button>
       </div>
 			<form class="" action="{{route('updateEnvironment')}}" method="post" enctype="multipart/form-data">
-				@csrf
+				@csrf @method('PATCH')
 	      <div class="modal-body">
           <div class="row form-group">
             <div class="col-md-4">
               <span>Nama event</span>
             </div>
             <div class="col-md-8">
-              <input type="hidden" name="user_id" id="user_id" value="">
+              <input type="hidden" name="environment_id" id="environment_id" value="">
               <input type="text" name="nama_event" value="" class="form-control" id="nama_event">
             </div>
           </div>
@@ -190,16 +190,17 @@
 		$('#data_environments_reguler').DataTable();
 
 		$('.edit-environment').click(function(){
-			const environment_id = $(this).data('environment_id');
+			const environment_id = $(this).data('id');
 			const nama_event = $(this).data('nama_event');
 			const gambar = $(this).data('gambar');
 			const link = $(this).data('link');
+			console.log(environment_id);
 
 
 			$('#nama_event').val(nama_event);
-			$('#gambar').val(gambar);
+			// $('#gambar').val(gambar);
 			$('#link').val(link);
-			// $('#posisi').val(posisi);
+			$('#environment_id').val(environment_id);
 		});
 
 		$('.hapus-environment').click(function(){

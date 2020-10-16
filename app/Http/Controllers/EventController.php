@@ -86,14 +86,15 @@ class EventController extends Controller
       return redirect()->back()->with('success', 'Berhasil menghapus event');
     }
 
-    public function updateEnvironment(Request $request,$id)
+    public function updateEnvironment(Request $request)
     {
+      // dd($request->environment_id);
       $request->validate([
         'nama_event' => 'required',
         'gambar' => 'file|image|mimes:png,jpg,jpeg,gif'
       ]);
-      $environment = Event::find($id);
-
+      $environment = Event::find($request->environment_id);
+      // dd($environment);
       if ($request->hasFile('gambar')) {
         $file_gambar = $request->file('gambar');
         $nama_file_gambar = time()."_".$file_gambar->getClientOriginalName();
@@ -102,7 +103,7 @@ class EventController extends Controller
 
         $link_youtube = null;
       }else {
-        $nama_file_gambar = null;
+        $nama_file_gambar = $environment->gambar;
 
 
 
@@ -113,11 +114,10 @@ class EventController extends Controller
 
       }
 
-      $environment->update([
+      Event::where('id',$request->environment_id)->update([
         'nama_event' => $request->nama_event,
         'gambar' => $nama_file_gambar,
         'link'=> $link_youtube,
-        'jenis' => 'environment'
       ]);
 
       return redirect()->back()->with('success','Berhasil mengedit event');
@@ -160,6 +160,43 @@ class EventController extends Controller
       ]);
 
       return redirect()->back()->with('success','Berhasil membuat event');
+    }
+
+    public function updateStudent(Request $request)
+    {
+      // dd($request->environment_id);
+      $request->validate([
+        'nama_event' => 'required',
+        'gambar' => 'file|image|mimes:png,jpg,jpeg,gif'
+      ]);
+      $student = Event::find($request->student_id);
+      // dd($student);
+      if ($request->hasFile('gambar')) {
+        $file_gambar = $request->file('gambar');
+        $nama_file_gambar = time()."_".$file_gambar->getClientOriginalName();
+        $tujuan_upload = 'events';
+        $file_gambar->move($tujuan_upload,$nama_file_gambar);
+
+        $link_youtube = null;
+      }else {
+        $nama_file_gambar = $student->gambar;
+
+
+
+        $link_awal = $request->link;
+        $sebelum = 'watch?v=';
+        $sesudah = ['embed/'];
+        $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
+
+      }
+
+      Event::where('id',$request->student_id)->update([
+        'nama_event' => $request->nama_event,
+        'gambar' => $nama_file_gambar,
+        'link'=> $link_youtube,
+      ]);
+
+      return redirect()->back()->with('success','Berhasil mengedit event');
     }
 
     public function deleteStudent($id)

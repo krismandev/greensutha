@@ -171,6 +171,7 @@ Route::group(['middleware' => ['auth','checkRole:superadmin,admin'],'prefix' => 
     });
     Route::group(['prefix'=>'student-organization'],function(){
       Route::get('/','EventController@getStudent')->name('getStudent');
+      Route::patch('/','EventController@updateStudent')->name('updateStudent');
       Route::post('/','EventController@storeStudent')->name('storeStudent');
       Route::get('/delete/{id}','EventController@deleteStudent')->name('deleteStudent');
     });
