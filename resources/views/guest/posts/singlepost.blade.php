@@ -166,7 +166,7 @@
 
             @if($post->link != null)
             <div class="container">
-              <iframe src="{{$post->link}}" width="100%" height="100%"></iframe>
+              <iframe src="{{$post->link}}" class="img-fluid"></iframe>
             </div>
             @endif
 

@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
   public function getPosts(){
-    $posts = Post::orderBy('created_at','desc')->orderBy('created_at','desc')->get();
+    $posts = Post::orderBy('created_at','desc')->orderBy('created_at','desc')->paginate(8);
     return view('admin.posts.getPosts',compact(['posts']));
   }
 
@@ -66,6 +66,13 @@ class PostController extends Controller
 
 
     return redirect()->route('getPosts')->with('success','Berhasil membuat berita baru');
+  }
+
+  public function deletePost($id)
+  {
+    $post = Post::find($id);
+    $post->delete();
+    return  redirect()->back()->with('success','Berhasil menghapus berita');
   }
 
   public function editPost($id)
