@@ -18,7 +18,7 @@ class GreenCampusController extends Controller
     $this->validate($request,[
       'deskripsi' => 'required',
       'gambar' => 'file|image|mimes:png,jpg,jpeg,gif',
-      'file' => 'required|file|mimes:docs,pdf,docx,xls',
+      'file' => 'required|file|mimes:docs,pdf,docx,xls,txt',
     ]);
 
     if ($request->hasFile('gambar')) {
@@ -109,7 +109,7 @@ class GreenCampusController extends Controller
       $sesudah = ['embed/'];
       $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
 
-    } 
+    }
 
     $energi = GreenCampus::create([
       'deskripsi' => $request->deskripsi,
