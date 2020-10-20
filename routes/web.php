@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(); 
+Auth::routes();
 Route::get('/','HomeController@index')->name('home');
 
 
@@ -53,8 +53,8 @@ Route::post('/pesan','PesanController@storePesan')->name('storePesan');
 
 Route::get('lang/{language}', 'LocalizationController@switch')->name('localization.switch');
 
-  Route::get('/environment','EventController@getEnvironmentUser')->name('getEnvironmentUser');
-  Route::get('/student-organization','EventController@getStudentUser')->name('getStudentUser');
+Route::get('/environment','EventController@getEnvironmentUser')->name('getEnvironmentUser');
+Route::get('/student-organization','EventController@getStudentUser')->name('getStudentUser');
 
 
 

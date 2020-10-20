@@ -332,7 +332,7 @@
                     <li><a href="{{route('home')}}">{{__('navbar.beranda')}}</a></li>
                     <li><a href="{{route('getSelayangPandangUser')}}">{{__('navbar.tentang')}}</a></li>
                     <li><a href="{{route('getPenataanUser')}}">{{__('navbar.green_campus')}}</a></li>
-                    <li><a href="{{route('getEventUser')}}">Event</a></li>
+                    <li><a href="{{route('getEnvironmentUser')}}">Event</a></li>
                   </ul>
               </div>
               <div class="col-md-6">

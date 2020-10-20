@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Banner;
+use Str;
 use App\VideoBanner;
 use Illuminate\Http\Request;
 
@@ -56,14 +57,21 @@ class BannerController extends Controller
         'link_video' => 'required'
       ]);
 
+      $link_awal = $request->link_video;
+      $sebelum = 'watch?v=';
+      $sesudah = ['embed/'];
+      $link_youtube = Str::replaceArray($sebelum,$sesudah,$link_awal);
+
       if ($video_banner == null) {
+
+
         $link_video = VideoBanner::insertGetId([
-          'link_video' => $request->link_video
+          'link_video' => $link_youtube
         ]);
         return redirect()->back()->with('success','Data  berhasil diupdate');
       }else {
         $link_video = [
-          'link_video' => $request->link_video
+          'link_video' => $link_youtube
         ];
         $video_banner->update($link_video);
       }

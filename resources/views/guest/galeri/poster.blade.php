@@ -10,11 +10,13 @@
       </div>
     </div>
     <div class="row">
+      @if($posters->count() != null)
       @foreach($posters as $poster)
-      <div class="col-md-6 col-lg-3 mb-4 gambar-gallery" data-aos="fade-up" data-aos-delay="">
+      <div class="col-md-6 col-lg-3 mb-4 poster" data-aos="fade-up" data-aos-delay="">
         <a href="{{url('galeri/poster/'.$poster->gambar)}}" data-fancybox="gallery"><img src="{{url('galeri/poster/'.$poster->gambar)}}" alt="Image" class="img-fluid" style="height:100%; width:100%;"></a>
       </div>
       @endforeach
+      @endif
     </div>
   </div>
 </div>
