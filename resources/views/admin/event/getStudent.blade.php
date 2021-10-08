@@ -212,18 +212,18 @@
 
 		$('.hapus-student').click(function(){
 			const student_id = $(this).data('student_id');
-      swal({
-        title: "Hapus?",
-        text: "Apa kamu yakin akan menghapus data ini?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          window.location = '/dashboard/event/student-organization/delete/'+student_id;
-        }
-      });
+            swal({
+                title: "Hapus?",
+                text: "Apa kamu yakin akan menghapus data ini?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                window.location = '/dashboard/event/student-organization/delete/'+student_id;
+                }
+            });
 			// const hapus = confirm('Yakin ingin menghapus student ini?');
       //
 			// if (hapus) {
