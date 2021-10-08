@@ -4,7 +4,7 @@
 <div class="our-blog blog-inner-page section-spacing">
     <div class="theme-title-one text-center">
         <h2 class="title">
-            Admisi Promoi
+            Admisi Promosi dan Perankingan Dunia
         </h2>
     </div>
     <div class="container">

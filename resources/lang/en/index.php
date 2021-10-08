@@ -13,4 +13,5 @@ return [
 
   'baca_selengkapnya' => 'Read more...',
   'selayang_pandang' => 'Overview',
+  'berita_terbaru' => 'Recent News'
 ];

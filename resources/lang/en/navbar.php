@@ -56,5 +56,5 @@ return [
   'profil_kampus' => 'Campus Profile',
   'hubungi_kami' => 'Send us on : ',
   'kantor_kami' => 'Our Office :',
-  'profil_pusat_kajian' => 'Study Center Profile'
+  'profil_pusat_kajian' => 'Profil Pusat Kajian Admisi Promosi dan Perankingan Dunia'
 ];

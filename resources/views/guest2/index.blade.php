@@ -66,7 +66,7 @@
 <div class="our-blog section-spacing">
     <div class="container">
         <div class="theme-title-one text-center">
-            <h2 class="title">Latest News &amp; Updates</h2>
+            <h2 class="title"></h2>
         </div> <!-- /.theme-title-one -->
         <div class="latest-news-slider">
             @foreach ($events as $event)

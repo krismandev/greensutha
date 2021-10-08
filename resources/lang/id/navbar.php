@@ -45,8 +45,8 @@ return [
   'kontak' => 'Kontak',
   'kami_akan_membantu' => 'Kami akan membantu',
   'penelitian_dan_pengabdian' => 'Penelitian dan Pengabdian',
-  'penelitian' => 'Research',
-  'pengabdian' => 'Devotion',
+  'penelitian' => 'Penelitian',
+  'pengabdian' => 'Pengabdian',
   'publikasi'=>'Publikasi',
   'publikasi_isi'=> [
     'buku' => 'Buku',
@@ -57,5 +57,5 @@ return [
   'profil_kampus' => 'Profil Kampus',
   'hubungi_kami' => 'Hubungi kami :',
   'kantor_kami' => 'Kantor Kami',
-  'profil_pusat_kajian'=> 'Profil Pusat Kajian'
+  'profil_pusat_kajian'=> 'Profil Pusat Kajian Admisi Promosi dan Perankingan Dunia'
 ];

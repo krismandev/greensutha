@@ -13,4 +13,5 @@ return [
 
   'baca_selengkapnya' => 'Baca selengkapnya...',
   'selayang_pandang' => 'Selayang Pandang',
+  'berita_terbaru' => 'Berita Terbaru'
 ];

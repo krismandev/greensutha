@@ -1,7 +1,23 @@
 <?php
 use App\Banner;
-
+use App\Visitor;
 $banners = Banner::inRandomOrder()->get();
+
+$ip      = $_SERVER['REMOTE_ADDR']; 
+$tanggal = date('Y-m-d');
+// dd($ip);
+
+$visitToday = Visitor::where('ip',$ip)->where('tanggal',$tanggal)->first();
+if ($visitToday == null) {
+    $newVisitor = Visitor::create([
+        'ip' => $ip,
+        'tanggal' => $tanggal
+    ]);
+}
+
+$countVisitorsToday = Visitor::where('tanggal',$tanggal)->count();
+$totalVisitors = Visitor::distinct()->count('tanggal');
+// dd($totalVisitors);
 
 ?>
 
@@ -94,14 +110,14 @@ $banners = Banner::inRandomOrder()->get();
 					<div class="container">
 						<div class="inner-wrapper clearfix">
 							<!-- ================= Logo ==================== -->
-							<div class="logo"><a href="index.html"><img src="images/logo/logo.png" alt="logo"></a></div>
+							<div class="logo"><a href="index.html"><img src="{{asset('gambar/logo_admisipromosi.png')}}" alt="logo" style="width: 70px; height: 70x;"></a></div>
 							<!-- ============== Menu Warpper ================ -->
 					   		<div class="menu-wrapper float-right">
 					   			<nav id="mega-menu-holder" class="clearfix">
 								   <ul class="clearfix">
 									    <li><a href="{{route('home')}}">{{__('navbar.beranda')}}</a>
 									    </li>
-									    <li><a href="#">About</a>
+									    <li><a href="#">{{__('navbar.tentang')}}</a>
 									    	<ul class="dropdown">
 									    		<li><a href="{{route('getTimUser')}}">{{__('navbar.tentang_green_sutha.tim')}}</a></li>
 									    		<li><a href="{{route('getProfilKampusUser')}}">{{__('navbar.profil_kampus')}}</a></li>
@@ -156,18 +172,18 @@ $banners = Banner::inRandomOrder()->get();
 									        	<li><a href="{{route('getPosterUser')}}">{{__('navbar.gallery_isi.poster')}}</a></li>
 									       </ul>
 									    </li>
-									    <li><a href="{{route('getPostsByCategory','')}}">News</a>
+									    <li><a href="{{route('getPostsByCategory','')}}">{{__('navbar.berita')}}</a>
 									    	<ul class="dropdown">
-									        	<li><a href="{{route('getPostsByCategory','Lingkungan')}}">Environment</a></li>
-									        	<li><a href="{{route('getPostsByCategory','Islam')}}">Islam</a></li>
-									        	<li><a href="{{route('getPostsByCategory','Sosial')}}">Social</a></li>
-									        	<li><a href="{{route('getPostsByCategory','Pendidikan')}}">Education</a></li>
-									        	<li><a href="{{route('getPostsByCategory','Budaya')}}">Culture</a></li>
-									        	<li><a href="{{route('getPostsByCategory','Ekonomi')}}">Economy</a></li>
-									        	<li><a href="{{route('getPostsByCategory','Sains')}}">Science</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Lingkungan')}}">{{__('navbar.kategori.lingkungan')}}</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Islam')}}">{{__('navbar.kategori.islam')}}</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Sosial')}}">{{__('navbar.kategori.sosial')}}</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Pendidikan')}}">{{__('navbar.kategori.pendidikan')}}</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Budaya')}}">{{__('navbar.kategori.budaya')}}</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Ekonomi')}}">{{__('navbar.kategori.ekonomi')}}</a></li>
+									        	<li><a href="{{route('getPostsByCategory','Sains')}}">{{__('navbar.kategori.sains')}}</a></li>
 									       </ul>
 									    </li>
-									    <li><a href="{{route('kontakUser')}}">{{__('navbar.kontak')}}</a></li>
+									    {{-- <li><a href="{{route('kontakUser')}}">{{__('navbar.kontak')}}</a></li> --}}
                                         <li class="has-submenu">
                                             <a href="#"> {{__('navbar.switch_language')}} </a>
                                             <ul class="dropdown">
@@ -207,16 +223,29 @@ $banners = Banner::inRandomOrder()->get();
 				<div class="container">
 					<div class="top-footer">
 						{{-- <div class="logo"><a href="index.html"><img src="{{asset('frontend2/images/logo/logo.png')}}" alt="logo"></a></div> --}}
+                        <div class="logo">
+							{{-- <a href="index.html"><img src="images/logo/logo.png" alt="logo"></a> --}}
+                            <ul>
+                                <li>
+                                    <i class="icon flaticon-message"></i>
+                                    <h6>{{__('navbar.hubungi_kami')}}</h6>
+                                    <a href="#">greensutha@uinjambi.ac.id</a>
+                                </li>
+                            </ul>
+						</div>
 						<ul class="clearfix">
 							<li>
 								<i class="icon flaticon-map"></i>
 								<h6>{{__('navbar.kantor_kami')}}</h6>
-								<a href="#">(088) 987 555 321</a>
+								<a href="#">Jln. Jambi-Muara Bulian KM. 16, <br>Simp. Sei Duren, Jambi Luar kota, <br> Muaro Jambi, Jambi 36361</a>
 							</li>
 							<li>
-								<i class="icon flaticon-message"></i>
-								<h6>{{__('navbar.hubungi_kami')}}</h6>
-								<a href="#">greensutha@uinjambi.ac.id</a>
+								
+							</li>
+                            <li>
+								<p>Pengunjung Hari ini: {{$countVisitorsToday}}</p>
+                                <br>
+                                <p>Total Pengunjung : {{$totalVisitors}}</p>
 							</li>
 						</ul>
 					</div> <!-- /.top-footer -->
@@ -241,6 +270,7 @@ $banners = Banner::inRandomOrder()->get();
 									<li><a href="{{route('getEnvironmentUser')}}">{{__('navbar.green_campus')}}</a></li>
 									<li><a href="{{route('getEnvironmentUser')}}">Event</a></li>
 									<li><a href="{{route('getBukuUser')}}">{{__('navbar.publikasi')}}</a></li>
+                                    <li><a href="{{route('kontakUser')}}">{{__('navbar.kontak')}}</a></li>
 								</ul>
 							</div> <!-- /.list-widget -->
 
