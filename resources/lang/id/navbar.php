@@ -42,5 +42,20 @@ return [
     'foto' => 'Foto',
     'poster' => 'Poster'
   ],
-  'kontak' => 'Kontak'
+  'kontak' => 'Kontak',
+  'kami_akan_membantu' => 'Kami akan membantu',
+  'penelitian_dan_pengabdian' => 'Penelitian dan Pengabdian',
+  'penelitian' => 'Research',
+  'pengabdian' => 'Devotion',
+  'publikasi'=>'Publikasi',
+  'publikasi_isi'=> [
+    'buku' => 'Buku',
+    'jurnal' => 'Jurnal',
+    'laporan_tahunan'=>'Laporan Tahunan',
+    'dokumen' => 'Dokumen'
+  ],
+  'profil_kampus' => 'Profil Kampus',
+  'hubungi_kami' => 'Hubungi kami :',
+  'kantor_kami' => 'Kantor Kami',
+  'profil_pusat_kajian'=> 'Profil Pusat Kajian'
 ];

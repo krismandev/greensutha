@@ -83,13 +83,13 @@ class GaleriController extends Controller
   //USER---------------------
   public function getFotoUser()
   {
-    $fotos = Foto::all();
-    return view('guest.galeri.foto',compact(['fotos']));
+    $fotos = Foto::paginate(30);
+    return view('guest2.galeri.foto',compact(['fotos']));
   }
 
   public function getPosterUser()
   {
-    $posters = Poster::all();
-    return view('guest.galeri.poster',compact(['posters']));
+    $posters = Poster::paginate(30);
+    return view('guest2.galeri.poster',compact(['posters']));
   }
 }

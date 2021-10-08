@@ -11,6 +11,7 @@ use App\Event;
 use App\Tim;
 use App\VideoBanner;
 use App\Kategori;
+use App\TentangAdmisiPromosi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -37,10 +38,11 @@ class HomeController extends Controller
       $selayang_pandang = SelayangPandang::first();
       $banners = Banner::all();
       $video_banner = VideoBanner::first();
-      $events = Event::all();
+      $events = Event::inRandomOrder()->paginate(10);
       $kategoris = Kategori::all();
-      $posts = Post::orderBy('created_at','desc')->paginate(3);
+      $posts = Post::orderBy('created_at','desc')->paginate(6);
       $tims = Tim::all();
-      return view('guest.index',compact(['posts','banners','fotos','kategoris','posters','selayang_pandang','events','tims','video_banner']));
+      $admisipromosi = TentangAdmisiPromosi::first();
+      return view('guest2.index',compact(['posts','admisipromosi','banners','fotos','kategoris','posters','selayang_pandang','events','tims','video_banner']));
     }
 }

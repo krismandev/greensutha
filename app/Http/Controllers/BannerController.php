@@ -25,8 +25,6 @@ class BannerController extends Controller
     $tujuan_upload = 'banner';
     $file->move($tujuan_upload,$nama_file);
 
-
-
     $banner = Banner::create([
       'gambar' => $nama_file,
     ]);

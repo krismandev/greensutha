@@ -136,7 +136,7 @@ class TimController extends Controller
     public function getTimUser()
     {
       $tims = Tim::all();
-      return view('guest.tentang.tim',compact(['tims']));
+      return view('guest2.tentang.tim',compact(['tims']));
     }
 
 }

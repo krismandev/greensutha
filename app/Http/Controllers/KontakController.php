@@ -47,6 +47,6 @@ class KontakController extends Controller
 
     public function kontakUser(){
       $kontak = Kontak::first();
-      return view('guest.kontak',compact(['kontak']));
+      return view('guest2.kontak',compact(['kontak']));
     }
 }

@@ -69,7 +69,6 @@
         <div class="col-md-9">
           <div class="col-sm-6">
             <input type="file" class="form-control input" name="gambar_makna" value="">
-
           </div>
         </div>
       </div>

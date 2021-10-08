@@ -57,12 +57,12 @@
         Kategori
       </div>
       <div class="col-lg-10">
-				<select class="form-control" name="kategori_id">
-					<option value="" selected>Pilih kategori</option>
-					@foreach($kategoris as $kategori)
-					<option value="{{$kategori->id}}">{{$kategori->nama_kategori}}</option>
-					@endforeach
-				</select>
+        <select class="form-control" name="kategori_id">
+            <option value="" selected>Pilih kategori</option>
+            @foreach($kategoris as $kategori)
+            <option value="{{$kategori->id}}">{{$kategori->nama_kategori}}</option>
+            @endforeach
+        </select>
       </div>
     </div>
 		<div class="row" style="margin-top:10px;">
@@ -94,14 +94,7 @@
 @stop
 @section('linkfooter')
 <script>
-ClassicEditor
-            .create( document.querySelector( '#konten' ) )
-            .then( editor => {
-                    console.log( editor );
-            } )
-            .catch( error => {
-                    console.error( error );
-            } );
+CKEDITOR.replace('konten')
 </script>
 
 @stop

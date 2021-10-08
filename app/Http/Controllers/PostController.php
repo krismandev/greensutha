@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
   public function getPosts(){
-    $posts = Post::orderBy('created_at','desc')->orderBy('created_at','desc')->paginate(8);
+    $posts = Post::orderBy('created_at','desc')->orderBy('created_at','desc')->get();
     return view('admin.posts.getPosts',compact(['posts']));
   }
 
@@ -126,21 +126,51 @@ class PostController extends Controller
       }
       return redirect()->back()->with('success','Berhasil Mengupdate berita');
   }
-  //USER---------------------------
+  //USER--------------------------------------------------------------------------
 
   public function showPostUser($slug){
 
     $banners = Banner::all();
     $kategoris = Kategori::all();
     $post = Post::where('slug',$slug)->first();
-    return view('guest.posts.singlepost',compact(['post','banners','kategoris']));
+    $other_posts = Post::inRandomOrder()->paginate(4);
+    return view('guest2.posts.singlepost',compact(['post','banners','kategoris','other_posts']));
+  }
+
+  public function searchPostsUser(Request $request)
+  {
+      $kategoris = Kategori::all();
+      if ($request->has('search')) {
+            $posts = Post::where('judul','LIKE','%'.$request->search.'%')->paginate(12);
+            $ktg = null;
+            $keyword = $request->search;
+      }
+      $other_posts = Post::inRandomOrder()->paginate(4);
+      return view('guest2.posts.posts',compact(['posts','kategoris','other_posts','ktg','keyword']));
   }
 
   public function getPostsUser()
   {
     $kategoris = Kategori::all();
-    $posts = Post::orderBy('created_at','desc')->paginate(6);
+    $posts = Post::orderBy('created_at','desc')->paginate(10);
     return view('guest.posts.berita',compact(['posts','kategoris']));
+  }
+
+  public function getPostsByCategory($kategori = null){
+    $kategoris = Kategori::all();
+    if($kategori != null){
+      $ktg = Kategori::where('nama_kategori',$kategori)->first();
+    //   dd($ktg);
+      $posts = Post::where('kategori_id',$ktg->id)->orderBy('created_at','desc')->paginate(8);
+    }else{
+      $posts = Post::orderBy('created_at','desc')->paginate(8);
+      $ktg = null;
+    }
+
+    $other_posts = Post::inRandomOrder()->paginate(4);
+
+    return view('guest2.posts.posts',compact(['posts','kategoris','other_posts','ktg']));
+
   }
 
   public function getPostsKategori($kategori)

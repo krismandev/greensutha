@@ -41,5 +41,20 @@ return [
     'foto' => 'Photos',
     'poster' => 'Posters'
   ],
-  'kontak' => 'Contact'
+  'kontak' => 'Contact',
+  'kami_akan_membantu' => 'We always here to helps you',
+  'penelitian_dan_pengabdian' => 'Research and Devotion',
+  'penelitian' => 'Research',
+  'pengabdian' => 'Devotion',
+  'publikasi' => 'Publication',
+  'publikasi_isi'=> [
+    'buku' => 'Book',
+    'jurnal' => 'Journal',
+    'laporan_tahunan'=>'Annual Report',
+    'dokumen' => 'Document'
+  ],
+  'profil_kampus' => 'Campus Profile',
+  'hubungi_kami' => 'Send us on : ',
+  'kantor_kami' => 'Our Office :',
+  'profil_pusat_kajian' => 'Study Center Profile'
 ];

@@ -383,39 +383,39 @@ class GreenCampusController extends Controller
   //USER-----------------------------------------------------------------------
   public function getPenataanUser()
   {
-    $penataans = GreenCampus::where('jenis','penataan')->get();
-    return view('guest.green_campus.penataan',compact(['penataans']));
+    $penataans = GreenCampus::where('jenis','penataan')->paginate(15);
+    return view('guest2.green_campus.penataan',compact(['penataans']));
   }
 
   public function getEnergiUser()
   {
-    $energis = GreenCampus::where('jenis','energi')->get();
-    return view('guest.green_campus.energi',compact(['energis']));
+    $energis = GreenCampus::where('jenis','energi')->paginate(15);
+    return view('guest2.green_campus.energi',compact(['energis']));
   }
 
   public function getLimbahUser()
   {
-    $limbahs = GreenCampus::where('jenis','limbah')->get();
-    return view('guest.green_campus.limbah',compact(['limbahs']));
+    $limbahs = GreenCampus::where('jenis','limbah')->paginate(15);
+    return view('guest2.green_campus.limbah',compact(['limbahs']));
   }
 
   public function getAirUser()
   {
-    $airs = GreenCampus::where('jenis','air')->get();
-    return view('guest.green_campus.air',compact(['airs']));
+    $airs = GreenCampus::where('jenis','air')->paginate(15);
+    return view('guest2.green_campus.air',compact(['airs']));
   }
 
   public function getTransportasiUser()
   {
-    $transportasis = GreenCampus::where('jenis','transportasi')->get();
+    $transportasis = GreenCampus::where('jenis','transportasi')->paginate(15);
     $judul = 'Hallo';
-    return view('guest.green_campus.transportasi',compact(['transportasis','judul']));
+    return view('guest2.green_campus.transportasi',compact(['transportasis','judul']));
   }
 
   public function getPendidikanUser()
   {
-    $pendidikans = GreenCampus::where('jenis','pendidikan')->get();
-    return view('guest.green_campus.pendidikan',compact(['pendidikans']));
+    $pendidikans = GreenCampus::where('jenis','pendidikan')->paginate(15);
+    return view('guest2.green_campus.pendidikan',compact(['pendidikans']));
   }
 
 }

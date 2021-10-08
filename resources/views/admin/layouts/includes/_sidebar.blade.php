@@ -22,9 +22,35 @@
       			<ul class="nav">
       				<li class=""><a href="{{route('getEnvironment')}}" >Environment & Sustainability </a></li>
       				<li class=""><a href="{{route('getStudent')}}">Student Organization </a></li>
+      				<li class=""><a href="{{route('getWebinar')}}">Webinar </a></li>
+      				<li class=""><a href="{{route('getSurvey')}}">Survey</a></li>
+      				<li class=""><a href="{{route('getLokakarya')}}">Lokakarya</a></li>
+      				<li class=""><a href="{{route('getSemcon')}}">Seminar & Conference</a></li>
+      				<li class=""><a href="{{route('getAward')}}">GreenSUTHA Award</a></li>
       			</ul>
       		</div>
       	</li>
+
+        <li>
+            <a href="#publikasi" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/publikasi*') || request()->is('dashboard/poster*') ) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Publikasi</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+            <div id="publikasi" class="collapse" aria-expanded="false" style="height: 0px;">
+                <ul class="nav">
+                    <li> <a href="{{route('getJurnal')}}">Jurnal</a> </li>
+                    <li> <a href="{{route('getBuku')}}">Buku</a> </li>
+                    <li> <a href="{{route('getReport')}}">Annual Report</a> </li>
+                    <li> <a href="{{route('getDokumen')}}">Dokumen</a> </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="#penelitian_pengabdian" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/penelitian*')|| request()->is('dashboard/pengabdian*') ) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-picture"></i> <span>Penelitian & Pengabdian</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+            <div id="penelitian_pengabdian" class="collapse" aria-expanded="false" style="height: 0px;">
+                <ul class="nav">
+                    <li> <a href="{{route('getPenelitian')}}">Penelitian</a> </li>
+                    <li> <a href="{{route('getPengabdian')}}">Pengabdian</a> </li>
+                </ul>
+            </div>
+        </li>
         <li>
       		<a href="#green-campus" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/green-campus*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-leaf"></i> <span>Green Campus</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
       		<div id="green-campus" class="collapse" aria-expanded="false" style="height: 0px;">
@@ -51,10 +77,11 @@
       		<a href="#tentang" data-toggle="collapse" class="collapsed {{(request()->is('dashboard/tentang*')) ? 'active' : ''}}" aria-expanded="false"><i class="lnr lnr-text-align-right"></i> <span>Tentang</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
       		<div id="tentang" class="collapse" aria-expanded="false" style="height: 0px;">
       			<ul class="nav">
-              <li class="{{(request()->is('dashboard/logo*')) ? 'active' : ''}}"><a href="{{route('getMaknaLogo')}}" >Makna Logo </a></li>
+                    <li class="{{(request()->is('dashboard/logo*')) ? 'active' : ''}}"><a href="{{route('getMaknaLogo')}}" >Makna Logo </a></li>
       				<li class="{{(request()->is('dashboard/selayang-pandang*')) ? 'active' : ''}}"><a href="{{route('getSelayangPandang')}}" >Selayang Pandang </a></li>
-              <li class="{{(request()->is('dashboard/kerjasama*')) ? 'active' : ''}}"><a href="{{route('getMitra')}}" >Kerja sama </a></li>
-
+                    <li class="{{(request()->is('dashboard/kerjasama*')) ? 'active' : ''}}"><a href="{{route('getMitra')}}" >Kerja sama </a></li>
+                    <li class="{{(request()->is('dashboard/profilkampus*')) ? 'active' : ''}}"><a href="{{route('getProfilKampus')}}" >Profil Kampus </a></li>
+                    <li class="{{(request()->is('dashboard/admisi-promosi*')) ? 'active' : ''}}"><a href="{{route('getAdmisiPromosi')}}" >Admisi Promosi </a></li>
       			</ul>
       		</div>
       	</li>

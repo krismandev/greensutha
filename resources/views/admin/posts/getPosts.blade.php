@@ -46,13 +46,9 @@
         </tr>
       </thead>
       <tbody>
-        @php 
-          $i = 1;
-        @endphp
 				@foreach($posts as $post)
         <tr>
-          <td>{{$posts->perPage()*($posts->currentPage()-1)+$i}}</td>
-          @php $i++; @endphp
+          <td>{{$loop->iteration}}</td>
           <td>{!!Str::limit($post->judul,50)!!}</td>
           <td>{!!Str::limit($post->konten,150)!!}</td>
           <td> <img src="{{url('posts/'.$post->gambar)}}" alt="" style="max-width: 100px; max-height: 100px;"></td>
@@ -64,9 +60,6 @@
 				@endforeach
       </tbody>
     </table>
-    <div class="">
-      {{$posts->links()}}
-    </div>
     @else
     <h3>Belum ada data post</h3>
     @endif
@@ -86,7 +79,7 @@
 		// $('#data_posts_reguler').DataTable({
     //   'order':[[5,'desc']]
     // });
-		// $('#data_posts_reguler').DataTable();
+		$('#data_posts_reguler').DataTable();
 
 		$('.hapus-post').click(function(){
 			const post_id = $(this).data('post_id');

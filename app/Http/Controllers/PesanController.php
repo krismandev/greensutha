@@ -28,7 +28,7 @@ class PesanController extends Controller
         'pesan' => $request->pesan,
       ]);
 
-      return redirect()->back()->with('success','Berhasil mengirim pesan');
+      return redirect()->route('home')->with('success','Berhasil mengirim pesan');
 
     }
 

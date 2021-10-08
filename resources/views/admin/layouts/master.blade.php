@@ -46,20 +46,19 @@
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
-		  <div class="main-content">
-		    <div class="row">
-		      <div class="col-md-12">
-						@yield('content')
-					</div>
-				</div>
-			</div>
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
 		</div>
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
 
-				</p>
 			</div>
 		</footer>
 	</div>
@@ -71,7 +70,8 @@
 	<script src="{{asset('admin/assets/scripts/klorofil-common.js')}}"></script>
 	<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> -->
-	<script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+	{{-- <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script> --}}
+    <script src="https://cdn.ckeditor.com/4.16.1/full-all/ckeditor.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 	@yield('linkfooter')
